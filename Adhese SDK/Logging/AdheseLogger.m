@@ -10,10 +10,10 @@
 
 @implementation AdheseLogger
 
-static NSString* SDK_EVENT = @"SDK EVENT";
-static NSString* SDK_ERROR = @"SDK ERROR";
-static NSString* NETWORK_REQUEST = @"NETWORK - REQUEST";
-static NSString* NETWORK_RESPONSE = @"NETWORK - RESPONSE";
+NSString* SDK_EVENT = @"SDK EVENT";
+NSString* SDK_ERROR = @"SDK ERROR";
+NSString* NETWORK_REQUEST = @"NETWORK - REQUEST";
+NSString* NETWORK_RESPONSE = @"NETWORK - RESPONSE";
 
 static bool isLoggingEnabled;
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4999DB6D23C5CD460048F138 /* Adhese_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB6B23C5CD460048F138 /* Adhese_SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4999DB7523C5D8B50048F138 /* Adhese.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7323C5D8B50048F138 /* Adhese.h */; };
+		4999DB7623C5D8B50048F138 /* Adhese.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB7423C5D8B50048F138 /* Adhese.m */; };
 		4999DB7A23C5E10A0048F138 /* AdheseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7823C5E10A0048F138 /* AdheseLogger.h */; };
 		4999DB7B23C5E10A0048F138 /* AdheseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB7923C5E10A0048F138 /* AdheseLogger.m */; };
 /* End PBXBuildFile section */
@@ -16,6 +18,8 @@
 		4999DB6823C5CD460048F138 /* Adhese_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Adhese_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4999DB6B23C5CD460048F138 /* Adhese_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Adhese_SDK.h; sourceTree = "<group>"; };
 		4999DB6C23C5CD460048F138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4999DB7323C5D8B50048F138 /* Adhese.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Adhese.h; sourceTree = "<group>"; };
+		4999DB7423C5D8B50048F138 /* Adhese.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Adhese.m; sourceTree = "<group>"; };
 		4999DB7823C5E10A0048F138 /* AdheseLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseLogger.h; sourceTree = "<group>"; };
 		4999DB7923C5E10A0048F138 /* AdheseLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdheseLogger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,6 +57,8 @@
 				4999DB7723C5E0F80048F138 /* Logging */,
 				4999DB6B23C5CD460048F138 /* Adhese_SDK.h */,
 				4999DB6C23C5CD460048F138 /* Info.plist */,
+				4999DB7323C5D8B50048F138 /* Adhese.h */,
+				4999DB7423C5D8B50048F138 /* Adhese.m */,
 			);
 			path = "Adhese SDK";
 			sourceTree = "<group>";
@@ -73,6 +79,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4999DB7523C5D8B50048F138 /* Adhese.h in Headers */,
 				4999DB6D23C5CD460048F138 /* Adhese_SDK.h in Headers */,
 				4999DB7A23C5E10A0048F138 /* AdheseLogger.h in Headers */,
 			);
@@ -146,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4999DB7623C5D8B50048F138 /* Adhese.m in Sources */,
 				4999DB7B23C5E10A0048F138 /* AdheseLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

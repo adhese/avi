@@ -10,6 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern NSString* SDK_EVENT;
+extern NSString* SDK_ERROR;
+extern NSString* NETWORK_REQUEST;
+extern NSString* NETWORK_RESPONSE;
+
+
 @interface AdheseLogger : NSObject
 
 +(void)logMessage:(NSString*)message;
