@@ -10,11 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern NSString* SDK_EVENT;
-extern NSString* SDK_ERROR;
-extern NSString* NETWORK_REQUEST;
-extern NSString* NETWORK_RESPONSE;
-
+static NSString* SDK_EVENT = @"SDK EVENT";
+static NSString* SDK_ERROR = @"SDK ERROR";
+static NSString* NETWORK_REQUEST = @"NETWORK - REQUEST";
+static NSString* NETWORK_RESPONSE = @"NETWORK - RESPONSE";
 
 @interface AdheseLogger : NSObject
 
