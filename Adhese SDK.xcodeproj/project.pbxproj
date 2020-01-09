@@ -12,6 +12,14 @@
 		4999DB7623C5D8B50048F138 /* Adhese.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB7423C5D8B50048F138 /* Adhese.m */; };
 		4999DB7A23C5E10A0048F138 /* AdheseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7823C5E10A0048F138 /* AdheseLogger.h */; };
 		4999DB7B23C5E10A0048F138 /* AdheseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB7923C5E10A0048F138 /* AdheseLogger.m */; };
+		4999DB7E23C6067C0048F138 /* AdheseOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7C23C6067C0048F138 /* AdheseOptions.h */; };
+		4999DB7F23C6067C0048F138 /* AdheseOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB7D23C6067C0048F138 /* AdheseOptions.m */; };
+		4999DB8323C609C40048F138 /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB8123C609C40048F138 /* Device.h */; };
+		4999DB8423C609C40048F138 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB8223C609C40048F138 /* Device.m */; };
+		4999DB8723C609D80048F138 /* CookieMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB8523C609D80048F138 /* CookieMode.h */; };
+		4999DB8A23C60A5D0048F138 /* URLParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB8923C60A5D0048F138 /* URLParameter.h */; };
+		4999DB8C23C70B5F0048F138 /* DeviceType.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB8B23C70B5F0048F138 /* DeviceType.h */; };
+		4999DB8E23C7163A0048F138 /* AdheseParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB8D23C7163A0048F138 /* AdheseParameter.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,14 @@
 		4999DB7423C5D8B50048F138 /* Adhese.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Adhese.m; sourceTree = "<group>"; };
 		4999DB7823C5E10A0048F138 /* AdheseLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseLogger.h; sourceTree = "<group>"; };
 		4999DB7923C5E10A0048F138 /* AdheseLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdheseLogger.m; sourceTree = "<group>"; };
+		4999DB7C23C6067C0048F138 /* AdheseOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseOptions.h; sourceTree = "<group>"; };
+		4999DB7D23C6067C0048F138 /* AdheseOptions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdheseOptions.m; sourceTree = "<group>"; };
+		4999DB8123C609C40048F138 /* Device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		4999DB8223C609C40048F138 /* Device.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
+		4999DB8523C609D80048F138 /* CookieMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookieMode.h; sourceTree = "<group>"; };
+		4999DB8923C60A5D0048F138 /* URLParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLParameter.h; sourceTree = "<group>"; };
+		4999DB8B23C70B5F0048F138 /* DeviceType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceType.h; sourceTree = "<group>"; };
+		4999DB8D23C7163A0048F138 /* AdheseParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseParameter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +71,13 @@
 			isa = PBXGroup;
 			children = (
 				4999DB7723C5E0F80048F138 /* Logging */,
+				4999DB8023C609A70048F138 /* Parameters */,
 				4999DB6B23C5CD460048F138 /* Adhese_SDK.h */,
 				4999DB6C23C5CD460048F138 /* Info.plist */,
 				4999DB7323C5D8B50048F138 /* Adhese.h */,
 				4999DB7423C5D8B50048F138 /* Adhese.m */,
+				4999DB7C23C6067C0048F138 /* AdheseOptions.h */,
+				4999DB7D23C6067C0048F138 /* AdheseOptions.m */,
 			);
 			path = "Adhese SDK";
 			sourceTree = "<group>";
@@ -72,6 +91,19 @@
 			path = Logging;
 			sourceTree = "<group>";
 		};
+		4999DB8023C609A70048F138 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				4999DB8D23C7163A0048F138 /* AdheseParameter.h */,
+				4999DB8523C609D80048F138 /* CookieMode.h */,
+				4999DB8123C609C40048F138 /* Device.h */,
+				4999DB8223C609C40048F138 /* Device.m */,
+				4999DB8B23C70B5F0048F138 /* DeviceType.h */,
+				4999DB8923C60A5D0048F138 /* URLParameter.h */,
+			);
+			path = Parameters;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -82,6 +114,12 @@
 				4999DB7523C5D8B50048F138 /* Adhese.h in Headers */,
 				4999DB6D23C5CD460048F138 /* Adhese_SDK.h in Headers */,
 				4999DB7A23C5E10A0048F138 /* AdheseLogger.h in Headers */,
+				4999DB8323C609C40048F138 /* Device.h in Headers */,
+				4999DB8E23C7163A0048F138 /* AdheseParameter.h in Headers */,
+				4999DB8C23C70B5F0048F138 /* DeviceType.h in Headers */,
+				4999DB7E23C6067C0048F138 /* AdheseOptions.h in Headers */,
+				4999DB8723C609D80048F138 /* CookieMode.h in Headers */,
+				4999DB8A23C60A5D0048F138 /* URLParameter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +192,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4999DB7623C5D8B50048F138 /* Adhese.m in Sources */,
+				4999DB7F23C6067C0048F138 /* AdheseOptions.m in Sources */,
 				4999DB7B23C5E10A0048F138 /* AdheseLogger.m in Sources */,
+				4999DB8423C609C40048F138 /* Device.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
