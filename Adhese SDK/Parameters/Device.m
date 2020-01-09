@@ -15,7 +15,7 @@
     return [self initWithDeviceBrand:deviceBrand deviceType:deviceType deviceInfo:nil];
 }
 
-- (id)initWithDeviceBrand:(NSString *)deviceBrand deviceType:(NSString *)deviceType deviceInfo:(NSString *)deviceInfo {
+- (id)initWithDeviceBrand:(NSString *)deviceBrand deviceType:(NSString *)deviceType deviceInfo:(NSString * _Nullable)deviceInfo {
     self = [super init];
     if (self) {
         self.brand = deviceBrand;

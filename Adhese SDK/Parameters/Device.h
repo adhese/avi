@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString* info;
 @property (nonatomic, strong) NSString* brand;
-@property (nonatomic, strong) NSString* type;
+@property (nonatomic, strong) NSString* _Nullable type;
 
 
 @end
