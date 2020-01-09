@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4999DB6D23C5CD460048F138 /* Adhese_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB6B23C5CD460048F138 /* Adhese_SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4999DB6D23C5CD460048F138 /* AdheseSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB6B23C5CD460048F138 /* AdheseSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4999DB7523C5D8B50048F138 /* Adhese.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7323C5D8B50048F138 /* Adhese.h */; };
 		4999DB7623C5D8B50048F138 /* Adhese.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB7423C5D8B50048F138 /* Adhese.m */; };
 		4999DB7A23C5E10A0048F138 /* AdheseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7823C5E10A0048F138 /* AdheseLogger.h */; };
@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		4999DB6823C5CD460048F138 /* Adhese_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Adhese_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4999DB6B23C5CD460048F138 /* Adhese_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Adhese_SDK.h; sourceTree = "<group>"; };
+		4999DB6B23C5CD460048F138 /* AdheseSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseSDK.h; sourceTree = "<group>"; };
 		4999DB6C23C5CD460048F138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4999DB7323C5D8B50048F138 /* Adhese.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Adhese.h; sourceTree = "<group>"; };
 		4999DB7423C5D8B50048F138 /* Adhese.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Adhese.m; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 			children = (
 				4999DB7723C5E0F80048F138 /* Logging */,
 				4999DB8023C609A70048F138 /* Parameters */,
-				4999DB6B23C5CD460048F138 /* Adhese_SDK.h */,
+				4999DB6B23C5CD460048F138 /* AdheseSDK.h */,
 				4999DB6C23C5CD460048F138 /* Info.plist */,
 				4999DB8F23C71C240048F138 /* Ad.h */,
 				4999DB9023C71C240048F138 /* Ad.m */,
@@ -118,7 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4999DB7523C5D8B50048F138 /* Adhese.h in Headers */,
-				4999DB6D23C5CD460048F138 /* Adhese_SDK.h in Headers */,
+				4999DB6D23C5CD460048F138 /* AdheseSDK.h in Headers */,
 				4999DB7A23C5E10A0048F138 /* AdheseLogger.h in Headers */,
 				4999DB8323C609C40048F138 /* Device.h in Headers */,
 				4999DB8E23C7163A0048F138 /* AdheseParameter.h in Headers */,
