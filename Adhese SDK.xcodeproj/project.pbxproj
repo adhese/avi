@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		4999DB6D23C5CD460048F138 /* AdheseSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB6B23C5CD460048F138 /* AdheseSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4999DB7523C5D8B50048F138 /* Adhese.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7323C5D8B50048F138 /* Adhese.h */; };
+		4999DB7523C5D8B50048F138 /* Adhese.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7323C5D8B50048F138 /* Adhese.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4999DB7623C5D8B50048F138 /* Adhese.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB7423C5D8B50048F138 /* Adhese.m */; };
 		4999DB7A23C5E10A0048F138 /* AdheseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7823C5E10A0048F138 /* AdheseLogger.h */; };
 		4999DB7B23C5E10A0048F138 /* AdheseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB7923C5E10A0048F138 /* AdheseLogger.m */; };
-		4999DB7E23C6067C0048F138 /* AdheseOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7C23C6067C0048F138 /* AdheseOptions.h */; };
+		4999DB7E23C6067C0048F138 /* AdheseOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7C23C6067C0048F138 /* AdheseOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4999DB7F23C6067C0048F138 /* AdheseOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB7D23C6067C0048F138 /* AdheseOptions.m */; };
-		4999DB8323C609C40048F138 /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB8123C609C40048F138 /* Device.h */; };
+		4999DB8323C609C40048F138 /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB8123C609C40048F138 /* Device.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4999DB8423C609C40048F138 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB8223C609C40048F138 /* Device.m */; };
 		4999DB8723C609D80048F138 /* CookieMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB8523C609D80048F138 /* CookieMode.h */; };
-		4999DB8A23C60A5D0048F138 /* URLParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB8923C60A5D0048F138 /* URLParameter.h */; };
+		4999DB8A23C60A5D0048F138 /* URLParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB8923C60A5D0048F138 /* URLParameter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4999DB8C23C70B5F0048F138 /* DeviceType.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB8B23C70B5F0048F138 /* DeviceType.h */; };
 		4999DB8E23C7163A0048F138 /* AdheseParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB8D23C7163A0048F138 /* AdheseParameter.h */; };
-		4999DB9123C71C240048F138 /* Ad.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB8F23C71C240048F138 /* Ad.h */; };
+		4999DB9123C71C240048F138 /* Ad.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB8F23C71C240048F138 /* Ad.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4999DB9223C71C240048F138 /* Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB9023C71C240048F138 /* Ad.m */; };
 		4999DB9623C73D1B0048F138 /* AdheseAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB9423C73D1B0048F138 /* AdheseAPI.h */; };
 		4999DB9723C73D1B0048F138 /* AdheseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB9523C73D1B0048F138 /* AdheseAPI.m */; };
@@ -29,7 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4999DB6823C5CD460048F138 /* Adhese_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Adhese_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4999DB6823C5CD460048F138 /* AdheseSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdheseSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4999DB6B23C5CD460048F138 /* AdheseSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseSDK.h; sourceTree = "<group>"; };
 		4999DB6C23C5CD460048F138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4999DB7323C5D8B50048F138 /* Adhese.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Adhese.h; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		4999DB6923C5CD460048F138 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4999DB6823C5CD460048F138 /* Adhese_SDK.framework */,
+				4999DB6823C5CD460048F138 /* AdheseSDK.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 			);
 			name = "Adhese SDK";
 			productName = "Adhese SDK";
-			productReference = 4999DB6823C5CD460048F138 /* Adhese_SDK.framework */;
+			productReference = 4999DB6823C5CD460048F138 /* AdheseSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -367,7 +367,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.endare.adhese.sdk;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = AdheseSDK;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -391,7 +391,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.endare.adhese.sdk;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = AdheseSDK;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

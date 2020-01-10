@@ -16,4 +16,6 @@ FOUNDATION_EXPORT const unsigned char AdheseSDKVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AdheseSDK/PublicHeader.h>
 
-
+#import "Adhese.h"
+#import "AdheseOptions.h"
+#import "Ad.h"
