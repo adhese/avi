@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49621A1223C8842500A3CBCE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 49621A1123C8842500A3CBCE /* README.md */; };
 		4999DB6D23C5CD460048F138 /* AdheseSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB6B23C5CD460048F138 /* AdheseSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4999DB7523C5D8B50048F138 /* Adhese.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7323C5D8B50048F138 /* Adhese.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4999DB7623C5D8B50048F138 /* Adhese.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB7423C5D8B50048F138 /* Adhese.m */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49621A1123C8842500A3CBCE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		4999DB6823C5CD460048F138 /* AdheseSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdheseSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4999DB6B23C5CD460048F138 /* AdheseSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseSDK.h; sourceTree = "<group>"; };
 		4999DB6C23C5CD460048F138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				4999DB7423C5D8B50048F138 /* Adhese.m */,
 				4999DB7C23C6067C0048F138 /* AdheseOptions.h */,
 				4999DB7D23C6067C0048F138 /* AdheseOptions.m */,
+				49621A1123C8842500A3CBCE /* README.md */,
 			);
 			path = "Adhese SDK";
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49621A1223C8842500A3CBCE /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
