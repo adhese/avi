@@ -9,13 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "AdheseOptions.h"
 #import "APIManager.h"
+#import "Ad.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
+typedef void (^AdsLoadedResponseHandler)(NSArray<Ad *> *ads);
 
 @interface AdheseAPI : NSObject
 
 @property (nonatomic, strong) APIManager* apiManager;
 
+- (id)initWithAccount:(NSString *)account;
+- (void)getAdsWithOptions:(AdheseOptions *)options withCompletionHandler:(AdsLoadedResponseHandler)completionHandler;
 
 @end
 

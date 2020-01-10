@@ -19,3 +19,4 @@ FOUNDATION_EXPORT const unsigned char AdheseSDKVersionString[];
 #import "Adhese.h"
 #import "AdheseOptions.h"
 #import "Ad.h"
+#import "AdheseAPI.h"

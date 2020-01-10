@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Ad.h"
+#import "AdheseAPI.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)initializeSdk:(NSString*)account withDebuggingEnabled:(bool)enabled;
 +(void)initializeSdk:(NSString*)account;
 +(NSString *)getAccount;
++(void)loadAds:(AdheseOptions *)options withCompletionHandler:(AdsLoadedResponseHandler)callback;
+
 @end
 
 NS_ASSUME_NONNULL_END

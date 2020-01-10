@@ -18,13 +18,15 @@
     return self;
 }
 
--(void)getForUrl:(NSString*)url {
-    NSURL *URL = [NSURL URLWithString:url];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+- (void)getForUrl:(NSString*)url withCompletionHandler:(APIResponseCompletionHandler)callback {
+    NSString *fullUrl = self.baseUrl ? [NSString stringWithFormat:@"%@%@", self.baseUrl, url] : url;
+    NSURL *requestUrl = [NSURL URLWithString:fullUrl];
+    NSURLRequest *request = [NSURLRequest requestWithURL:requestUrl];
 
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        // TODO: handle callback
+        AdheseAPIResponse *apiResponse = [[AdheseAPIResponse alloc] initWithData:data withError:error];
+        callback(apiResponse);
     }];
 
     [task resume];

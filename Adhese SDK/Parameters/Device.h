@@ -11,11 +11,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Device : NSObject <URLParameter>
+@interface Device : NSObject
 
 @property (nonatomic, strong) NSString* info;
 @property (nonatomic, strong) NSString* brand;
 @property (nonatomic, strong) NSString* _Nullable type;
+
+- (id)initWithDeviceBrand:(NSString *)deviceBrand deviceType:(NSString *)deviceType deviceInfo:(NSString * _Nullable)deviceInfo;
+- (id)initWithDeviceBrand:(NSString *)deviceBrand deviceType:(NSString *)deviceType;
+- (NSString *)getAsURL;
 
 @end
 

@@ -8,20 +8,24 @@
 
 #import "AdheseAPI.h"
 
-static NSString* BASE_URL = @"https://ads-%s.adhese.com/";
+static NSString* BASE_URL = @"https://ads-%@.adhese.com/";
 
 @implementation AdheseAPI
 
-
-
--(void)getAdsWithOptions:(AdheseOptions *)options {
+- (id)initWithAccount:(NSString *)account {
+    self = [super init];
     
+    self.apiManager = [[APIManager alloc] initWithbaseUrl:[NSString stringWithFormat:BASE_URL, account]];
     
-    
-    // TODO: perform request and convert response to Ad domain
+    return self;
 }
 
-
-
+- (void)getAdsWithOptions:(AdheseOptions *)options withCompletionHandler:(AdsLoadedResponseHandler)completionHandler {
+    NSString *url = [NSString stringWithFormat:@"json%@", [options getAsURL]];
+    
+    [self.apiManager getForUrl:url withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
+        // TODO: convert response to Ad domain and call callback
+    }];
+}
 
 @end

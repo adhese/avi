@@ -7,17 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AdheseAPIResponse.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-//typedef void (^VersionResponseCompletionHandler)(AppVersion *version);
+typedef void (^APIResponseCompletionHandler)(AdheseAPIResponse *response);
 
 @interface APIManager : NSObject
 
 @property (nonatomic, strong) NSString* baseUrl;
 
 - (id)initWithbaseUrl:(NSString *)baseUrl;
--(void)getForUrl:(NSString*)url; // TODO: add completionhandler
+- (void)getForUrl:(NSString*)url withCompletionHandler:(APIResponseCompletionHandler)callback;
 
 @end
 
