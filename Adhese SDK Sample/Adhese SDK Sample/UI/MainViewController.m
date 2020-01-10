@@ -1,24 +1,22 @@
 //
-//  ViewController.m
+//  MainViewController.m
 //  Adhese SDK Sample
 //
 //  Created by Axel Jonckheere on 10/01/2020.
 //  Copyright © 2020 Axel Jonckheere. All rights reserved.
 //
 
-#import "ViewController.h"
-#import <AdheseSDK/AdheseSDK.h>
+#import "MainViewController.h"
 
-@interface ViewController ()
+@interface MainViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    // Do any additional setup after loading the view from its nib.
 }
-
 
 @end
