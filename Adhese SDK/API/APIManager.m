@@ -20,7 +20,7 @@
 }
 
 - (void)getForUrl:(NSString*)url withCompletionHandler:(APIResponseCompletionHandler)callback {
-    NSString *fullUrl = self.baseUrl ? [NSString stringWithFormat:@"%@%@", self.baseUrl, url] : url;
+    NSString *fullUrl = @"https://ads-demo.adhese.com/json/sl_demo_ster_a_-billboard/sl_demo_ster_a_-halfpage/tlall/deAndroid/dtphone/brLGE_LG-H870"; //self.baseUrl ? [NSString stringWithFormat:@"%@%@", self.baseUrl, url] : url;
     NSURL *requestUrl = [NSURL URLWithString:fullUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:requestUrl];
 

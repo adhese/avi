@@ -25,17 +25,24 @@ static NSString* BASE_URL = @"https://ads-%@.adhese.com/";
     NSString *url = [NSString stringWithFormat:@"json%@", [options getAsURL]];
     
     [self.apiManager getForUrl:url withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
-        NSDictionary* adsData = [self convertDataToDictionary:response.data];
-        // TODO: convert response to Ad domain and call callback
+        NSArray* adsData = [self convertDataToDictionary:response.data];
+        NSMutableArray<Ad *> * result = [NSMutableArray array];
+        
+        for (NSDictionary *entry in adsData) {
+            Ad *ad = [[Ad alloc] initFromDictionary:entry];
+            [result addObject:ad];
+        }
+        
+        completionHandler([result copy]);
     }];
 }
 
--(NSDictionary*)convertDataToDictionary:(NSData *)data {
+-(NSArray*)convertDataToDictionary:(NSData *)data {
     NSError *error = nil;
-    NSDictionary* jsonArray = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableLeaves error: &error];
+    NSArray* jsonArray = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingMutableLeaves error:&error];
 
     if (!jsonArray) {
-        [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Error: %@", error.localizedDescription]];
+        [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Parsing error: %@", error.localizedDescription]];
     }
 
     return jsonArray;

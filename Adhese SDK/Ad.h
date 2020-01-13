@@ -28,6 +28,9 @@ static NSString* kHeight = @"height";
 @property (nonatomic, strong) NSString* slotName;
 @property (nonatomic, assign) NSInteger width;
 @property (nonatomic, assign) NSInteger height;
+@property (nonatomic, assign) NSDictionary* raw;
+
+-(id)initFromDictionary:(NSDictionary *)data;
 
 @end
 

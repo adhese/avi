@@ -12,6 +12,8 @@
 		49621A2A23C8AD6B00A3CBCE /* AdheseAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 49621A2823C8AD6B00A3CBCE /* AdheseAPIResponse.m */; };
 		49621A2E23CC77E400A3CBCE /* DeviceUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 49621A2C23CC77E400A3CBCE /* DeviceUtils.h */; };
 		49621A2F23CC77E400A3CBCE /* DeviceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 49621A2D23CC77E400A3CBCE /* DeviceUtils.m */; };
+		49621A3223CCADB400A3CBCE /* JSONUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 49621A3023CCADB400A3CBCE /* JSONUtils.h */; };
+		49621A3323CCADB400A3CBCE /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 49621A3123CCADB400A3CBCE /* JSONUtils.m */; };
 		4999DB6D23C5CD460048F138 /* AdheseSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB6B23C5CD460048F138 /* AdheseSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4999DB7523C5D8B50048F138 /* Adhese.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7323C5D8B50048F138 /* Adhese.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4999DB7623C5D8B50048F138 /* Adhese.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB7423C5D8B50048F138 /* Adhese.m */; };
@@ -39,6 +41,8 @@
 		49621A2823C8AD6B00A3CBCE /* AdheseAPIResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdheseAPIResponse.m; sourceTree = "<group>"; };
 		49621A2C23CC77E400A3CBCE /* DeviceUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceUtils.h; sourceTree = "<group>"; };
 		49621A2D23CC77E400A3CBCE /* DeviceUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceUtils.m; sourceTree = "<group>"; };
+		49621A3023CCADB400A3CBCE /* JSONUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
+		49621A3123CCADB400A3CBCE /* JSONUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
 		4999DB6823C5CD460048F138 /* AdheseSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdheseSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4999DB6B23C5CD460048F138 /* AdheseSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseSDK.h; sourceTree = "<group>"; };
 		4999DB6C23C5CD460048F138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 			children = (
 				49621A2C23CC77E400A3CBCE /* DeviceUtils.h */,
 				49621A2D23CC77E400A3CBCE /* DeviceUtils.m */,
+				49621A3023CCADB400A3CBCE /* JSONUtils.h */,
+				49621A3123CCADB400A3CBCE /* JSONUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -163,6 +169,7 @@
 				4999DB7523C5D8B50048F138 /* Adhese.h in Headers */,
 				4999DB6D23C5CD460048F138 /* AdheseSDK.h in Headers */,
 				49621A2923C8AD6B00A3CBCE /* AdheseAPIResponse.h in Headers */,
+				49621A3223CCADB400A3CBCE /* JSONUtils.h in Headers */,
 				4999DB7A23C5E10A0048F138 /* AdheseLogger.h in Headers */,
 				49621A2E23CC77E400A3CBCE /* DeviceUtils.h in Headers */,
 				4999DB8323C609C40048F138 /* Device.h in Headers */,
@@ -249,6 +256,7 @@
 				4999DB9723C73D1B0048F138 /* AdheseAPI.m in Sources */,
 				49621A2A23C8AD6B00A3CBCE /* AdheseAPIResponse.m in Sources */,
 				49621A2F23CC77E400A3CBCE /* DeviceUtils.m in Sources */,
+				49621A3323CCADB400A3CBCE /* JSONUtils.m in Sources */,
 				4999DB7623C5D8B50048F138 /* Adhese.m in Sources */,
 				4999DB7F23C6067C0048F138 /* AdheseOptions.m in Sources */,
 				4999DB9223C71C240048F138 /* Ad.m in Sources */,
