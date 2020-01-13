@@ -16,6 +16,13 @@
 
 @implementation AppDelegate
 
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey,id> *)launchOptions {
+    
+    // Initialise the Adhese SDK
+    [Adhese initializeSdk:kAdheseAccount withDebuggingEnabled:YES];
+    
+    return YES;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -24,9 +31,6 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     self.window.rootViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-    
-    // Initialise the Adhese SDK
-    [Adhese initializeSdk:kAdheseAccount withDebuggingEnabled:YES];
     
     return YES;
 }

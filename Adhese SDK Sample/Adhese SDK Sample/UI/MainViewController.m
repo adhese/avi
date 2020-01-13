@@ -7,6 +7,8 @@
 //
 
 #import "MainViewController.h"
+#import <AdheseSDK/Adhese.h>
+#import <AdheseSDK/CookieMode.h>
 
 @interface MainViewController ()
 
@@ -16,7 +18,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    // Build Adhese options
+    AdheseOptions *options = [[AdheseOptions alloc] initWithLocation:@"_demo_ster_a_"];
+    options.cookieMode = kAll;
+    options.slots = @[@"billboard", @"halfpage"];
+    
+    [Adhese loadAds:options withCompletionHandler:^(NSArray<Ad *> * _Nonnull ads) {
+        // TODO: do something with the ads...
+        NSLog(@"%@", ads);
+    }];
 }
 
 @end
