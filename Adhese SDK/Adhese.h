@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)initializeSdk:(NSString*)account withDebuggingEnabled:(bool)enabled;
 +(void)initializeSdk:(NSString*)account;
 +(NSString *)getAccount;
++(Device *)determineDevice;
 +(void)loadAds:(AdheseOptions *)options withCompletionHandler:(AdsLoadedResponseHandler)callback;
 
 @end

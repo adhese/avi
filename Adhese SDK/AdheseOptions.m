@@ -11,6 +11,14 @@
 
 @implementation AdheseOptions
 
+- (id)initWithLocation:(NSString *)location {
+    self = [super init];
+    if (self) {
+        self.location = location;
+    }
+    return self;
+}
+
 - (NSString *)getAsURL {
     NSMutableString *result = [[NSMutableString alloc] initWithString:@""];
     
@@ -21,7 +29,7 @@
     [result appendFormat:@"/%@%@", kCookieMode, self.cookieMode];
     
     if (self.device) {
-        [result appendString:[self.device getAsURL]];
+        [result appendFormat:@"%@", [self.device getAsURL]];
     }
     
     return [[NSString alloc] initWithString:result];

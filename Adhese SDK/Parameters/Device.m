@@ -26,18 +26,18 @@
 }
 
 - (NSString *)getAsURL {
-    NSMutableString *result = [[NSMutableString alloc] initWithString:@""];
+    NSMutableString *result = [[NSMutableString alloc] initWithString:@""];    
     
-    if (!self.info || self.info.length == 0) {
+    if (self.info && [self.info length] != 0) {
         [result appendFormat:@"/%@%@", kDeviceId, self.info];
     }
     
-    if (!self.type || self.type.length == 0) {
+    if (self.type && [self.type length] != 0) {
         [result appendFormat:@"/%@%@", kDeviceType, self.type];
     }
     
-    if (!self.brand || self.brand.length == 0) {
-         [result appendFormat:@"/%@%@", kDeviceBrand, self.brand];
+    if (self.brand && [self.brand length] != 0) {
+        [result appendFormat:@"/%@%@", kDeviceBrand, self.brand];
     }
     
     return [[NSString alloc] initWithString:result];

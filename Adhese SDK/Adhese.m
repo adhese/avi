@@ -8,12 +8,16 @@
 
 #import "Adhese.h"
 #import "AdheseLogger.h"
+#import <UIKit/UIKit.h>
+#import "DeviceUtils.h"
 
 @implementation Adhese
 
 static bool isInitialized;
 static NSString* adheseAccount;
 static AdheseAPI* adheseAPI;
+static Device* device;
+static NSString* kOSName = @"iOS";
 
 +(void)initializeSdk:(NSString*)account withDebuggingEnabled:(bool)enabled {
     
@@ -30,8 +34,14 @@ static AdheseAPI* adheseAPI;
     [AdheseLogger setIsLoggingEnabled:enabled];
     adheseAccount = account;
     adheseAPI = [[AdheseAPI alloc] initWithAccount:adheseAccount];
+    device = [self determineDevice];
+    isInitialized = YES;
 
     [AdheseLogger logEvent:SDK_EVENT withMessage:@"Initialised the SDK."];
+}
+
++(void)initializeSdk:(NSString*)account {
+    [self initializeSdk:account withDebuggingEnabled:false];
 }
 
 +(void)loadAds:(AdheseOptions *)options withCompletionHandler:(AdsLoadedResponseHandler)callback {
@@ -41,11 +51,18 @@ static AdheseAPI* adheseAPI;
         return;
     }
     
+    if (!options.device) {
+        options.device = device;
+    }
+    
     [adheseAPI getAdsWithOptions:options withCompletionHandler:callback];
 }
 
-+(void)initializeSdk:(NSString*)account {
-    [self initializeSdk:account withDebuggingEnabled:false];
++(Device *)determineDevice {
+    NSString *brand = [[UIDevice currentDevice] model];
+    NSString *info = [DeviceUtils determineDeviceType];
+    
+    return [[Device alloc] initWithDeviceBrand:brand deviceType:kOSName deviceInfo:info];
 }
 
 +(NSString *)getAccount {

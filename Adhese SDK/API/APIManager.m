@@ -7,6 +7,7 @@
 //
 
 #import "APIManager.h"
+#import "AdheseLogger.h"
 
 @implementation APIManager
 
@@ -23,8 +24,18 @@
     NSURL *requestUrl = [NSURL URLWithString:fullUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:requestUrl];
 
+    [AdheseLogger logEvent:NETWORK_REQUEST withMessage:[NSString stringWithFormat:@"Performing GET for url %@", fullUrl]];
+    
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+            [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Error: %@", error.localizedDescription]];
+        }
+        
+        NSString *stringifiedResponse = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        [AdheseLogger logEvent:NETWORK_RESPONSE withMessage:[NSString stringWithFormat:@"Response %@", stringifiedResponse]];
+        
         AdheseAPIResponse *apiResponse = [[AdheseAPIResponse alloc] initWithData:data withError:error];
         callback(apiResponse);
     }];

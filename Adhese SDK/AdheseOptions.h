@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) Device* device;
 
 - (NSString *)getAsURL;
+- (id)initWithLocation:(NSString *)location;
 
 @end
 

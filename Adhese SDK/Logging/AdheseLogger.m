@@ -28,7 +28,7 @@ static bool isLoggingEnabled;
 
 
 +(void)logEvent:(NSString*)event withMessage:(NSString*)message {
-    [self logMessage:[NSString stringWithFormat:@" %@ | %@", event, message]];
+    [self logMessage:[NSString stringWithFormat:@"%@ | %@", event, message]];
 }
 
 +(bool)isLoggingEnabled {

@@ -7,6 +7,7 @@
 //
 
 #import "AdheseAPI.h"
+#import "AdheseLogger.h"
 
 static NSString* BASE_URL = @"https://ads-%@.adhese.com/";
 
@@ -24,8 +25,20 @@ static NSString* BASE_URL = @"https://ads-%@.adhese.com/";
     NSString *url = [NSString stringWithFormat:@"json%@", [options getAsURL]];
     
     [self.apiManager getForUrl:url withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
+        NSDictionary* adsData = [self convertDataToDictionary:response.data];
         // TODO: convert response to Ad domain and call callback
     }];
+}
+
+-(NSDictionary*)convertDataToDictionary:(NSData *)data {
+    NSError *error = nil;
+    NSDictionary* jsonArray = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableLeaves error: &error];
+
+    if (!jsonArray) {
+        [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Error: %@", error.localizedDescription]];
+    }
+
+    return jsonArray;
 }
 
 @end
