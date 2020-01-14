@@ -14,6 +14,8 @@
 		49621A2F23CC77E400A3CBCE /* DeviceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 49621A2D23CC77E400A3CBCE /* DeviceUtils.m */; };
 		49621A3223CCADB400A3CBCE /* JSONUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 49621A3023CCADB400A3CBCE /* JSONUtils.h */; };
 		49621A3323CCADB400A3CBCE /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 49621A3123CCADB400A3CBCE /* JSONUtils.m */; };
+		49621A3723CD9CD700A3CBCE /* AdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 49621A3523CD9CD700A3CBCE /* AdView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49621A3823CD9CD700A3CBCE /* AdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49621A3623CD9CD700A3CBCE /* AdView.m */; };
 		4999DB6D23C5CD460048F138 /* AdheseSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB6B23C5CD460048F138 /* AdheseSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4999DB7523C5D8B50048F138 /* Adhese.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7323C5D8B50048F138 /* Adhese.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4999DB7623C5D8B50048F138 /* Adhese.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB7423C5D8B50048F138 /* Adhese.m */; };
@@ -43,6 +45,8 @@
 		49621A2D23CC77E400A3CBCE /* DeviceUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceUtils.m; sourceTree = "<group>"; };
 		49621A3023CCADB400A3CBCE /* JSONUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
 		49621A3123CCADB400A3CBCE /* JSONUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
+		49621A3523CD9CD700A3CBCE /* AdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdView.h; sourceTree = "<group>"; };
+		49621A3623CD9CD700A3CBCE /* AdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdView.m; sourceTree = "<group>"; };
 		4999DB6823C5CD460048F138 /* AdheseSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdheseSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4999DB6B23C5CD460048F138 /* AdheseSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseSDK.h; sourceTree = "<group>"; };
 		4999DB6C23C5CD460048F138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +92,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		49621A3423CD9CAE00A3CBCE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				49621A3523CD9CD700A3CBCE /* AdView.h */,
+				49621A3623CD9CD700A3CBCE /* AdView.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		4999DB5E23C5CD450048F138 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +123,7 @@
 				4999DB9323C720990048F138 /* API */,
 				4999DB7723C5E0F80048F138 /* Logging */,
 				4999DB8023C609A70048F138 /* Parameters */,
+				49621A3423CD9CAE00A3CBCE /* UI */,
 				49621A2B23CC77D200A3CBCE /* Utils */,
 				4999DB6B23C5CD460048F138 /* AdheseSDK.h */,
 				4999DB6C23C5CD460048F138 /* Info.plist */,
@@ -180,6 +194,7 @@
 				4999DB9623C73D1B0048F138 /* AdheseAPI.h in Headers */,
 				4999DB9123C71C240048F138 /* Ad.h in Headers */,
 				4999DB8723C609D80048F138 /* CookieMode.h in Headers */,
+				49621A3723CD9CD700A3CBCE /* AdView.h in Headers */,
 				4999DB8A23C60A5D0048F138 /* URLParameter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4999DB9723C73D1B0048F138 /* AdheseAPI.m in Sources */,
+				49621A3823CD9CD700A3CBCE /* AdView.m in Sources */,
 				49621A2A23C8AD6B00A3CBCE /* AdheseAPIResponse.m in Sources */,
 				49621A2F23CC77E400A3CBCE /* DeviceUtils.m in Sources */,
 				49621A3323CCADB400A3CBCE /* JSONUtils.m in Sources */,

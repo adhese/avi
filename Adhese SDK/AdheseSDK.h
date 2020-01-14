@@ -21,3 +21,4 @@ FOUNDATION_EXPORT const unsigned char AdheseSDKVersionString[];
 #import "Ad.h"
 #import "AdheseAPI.h"
 #import "CookieMode.h"
+#import "AdView.h"
