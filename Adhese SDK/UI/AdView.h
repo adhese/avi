@@ -12,9 +12,26 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol AdViewDelegate <NSObject>
+
+@optional
+- (void)adDidLoad:(id)adView;
+
+@optional
+- (void)trackerWasNotified:(id)adView;
+
+@optional
+- (void)viewImpressionWasNotified:(id)adView;
+
+@optional
+- (void)adClicked:(id)adView;
+
+@end
+
 @interface AdView : WKWebView <WKNavigationDelegate>
 
 @property (nonatomic, strong) Ad* ad;
+@property (nonatomic, weak) id <AdViewDelegate> delegate;
 
 @end
 

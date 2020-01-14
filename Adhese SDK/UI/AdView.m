@@ -8,10 +8,17 @@
 
 #import "AdView.h"
 #import <WebKit/WKWebViewConfiguration.h>
+#import "AdheseLogger.h"
+#import "APIManager.h"
 
 @implementation AdView
 
 #pragma mark - Init
+
+BOOL isContentLoaded;
+BOOL hasViewImpressionBeenCalled;
+BOOL isViewImpressionCallInProgress;
+BOOL isViewCurrentlyVisible;
 
 -(instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithFrame:CGRectZero configuration:[[WKWebViewConfiguration alloc] init]];
@@ -51,20 +58,94 @@
 #pragma mark - Getters/Setters
 
 -(void)setAd:(Ad *)ad {
-    self.ad = ad;
+    _ad = ad;
     [self loadAd];
 }
 
 #pragma mark - Helpers
 
 -(void)loadAd {
-    [self loadHTMLString:self.ad.content baseURL:nil];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+        [self loadHTMLString:self.ad.content baseURL:nil];
+    }];
+}
+
+-(void)notifyTracker {
+    [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Will notify the tracker for slot %@", self.ad.slotName]];
+    
+    [[[APIManager alloc] initWithbaseUrl:nil] getForUrl:self.ad.trackerUrl withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
+        
+        if (response.error) {
+            [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Failed to notify the tracker for slot %@. %@", self.ad.slotName, response.error.localizedDescription]];
+            //TODO: notify about error
+            return;
+        }
+        
+        [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Notified tracker for slot  %@", self.ad.slotName]];
+        
+        [self.delegate trackerWasNotified:self];
+    }];
+}
+
+-(void)notifyViewImpression {
+    isViewImpressionCallInProgress = YES;
+    [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Will notify the view impression for slot %@", self.ad.slotName]];
+
+    [[[APIManager alloc] initWithbaseUrl:nil] getForUrl:self.ad.trackerUrl withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
+        
+        if (response.error) {
+            [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Failed to send view impression for slot %@. %@", self.ad.slotName, response.error.localizedDescription]];
+            //TODO: notify about error
+            return;
+        }
+        
+        [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Notified tracker for slot %@", self.ad.slotName]];
+        
+        [self.delegate viewImpressionWasNotified:self];
+    }];
+}
+
+-(void)triggerViewImpressionWhenVisible {
+    if (!hasViewImpressionBeenCalled
+        && !isViewImpressionCallInProgress
+        && self.ad
+        && self.ad.viewableImpressionurl
+        && self.ad.viewableImpressionurl.length > 0
+        && !self.isHidden
+        && isViewCurrentlyVisible) {
+            [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"%@ is visible", self.ad.slotName]];
+            [self notifyViewImpression];
+    }
 }
 
 #pragma mark - WKNavigationDelegate
 
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     
+    if (isContentLoaded) {
+        return;
+    }
+    
+    isContentLoaded = YES;
+    
+    [self.delegate adDidLoad:self];
+    
+    [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Finished loading slot %@", self.ad.slotName]];
+
+    [self notifyTracker];
+    [self triggerViewImpressionWhenVisible];
+}
+
+-(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    
+}
+
+#pragma mark - Overrides
+
+- (void)didMoveToWindow {
+    [super didMoveToWindow];
+    
+    isViewCurrentlyVisible = self.window != nil;
 }
 
 @end
