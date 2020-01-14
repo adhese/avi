@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AdheseAPIResponse : NSObject
 
 @property (nonatomic, strong) NSData* data;
-@property (nonatomic, strong) NSError* error;
+@property (nonatomic, strong, nullable) NSError* error;
 
-- (id)initWithData:(NSData *)data withError:(NSError *)error;
+- (id)initWithData:(NSData *)data withError:(NSError * _Nullable)error;
 
 @end
 

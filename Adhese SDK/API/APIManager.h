@@ -17,7 +17,7 @@ typedef void (^APIResponseCompletionHandler)(AdheseAPIResponse *response);
 
 @property (nonatomic, strong) NSString* baseUrl;
 
-- (id)initWithbaseUrl:(NSString *)baseUrl;
+- (id)initWithBaseUrl:(NSString * _Nullable)baseUrl;
 - (void)getForUrl:(NSString*)url withCompletionHandler:(APIResponseCompletionHandler)callback;
 
 @end

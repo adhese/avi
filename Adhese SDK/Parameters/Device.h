@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Device : NSObject
 
-@property (nonatomic, strong) NSString* info;
+@property (nonatomic, strong, nullable) NSString* info;
 @property (nonatomic, strong) NSString* brand;
-@property (nonatomic, strong) NSString* _Nullable type;
+@property (nonatomic, strong) NSString* type;
 
 - (id)initWithDeviceBrand:(NSString *)deviceBrand deviceType:(NSString *)deviceType deviceInfo:(NSString * _Nullable)deviceInfo;
 - (id)initWithDeviceBrand:(NSString *)deviceBrand deviceType:(NSString *)deviceType;

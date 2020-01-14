@@ -11,7 +11,7 @@
 @implementation AdheseAPIResponse
 
 
-- (id)initWithData:(NSData *)data withError:(NSError *)error {
+- (id)initWithData:(NSData *)data withError:(NSError * _Nullable)error {
     self = [super init];
     if (self) {
         self.data = data;

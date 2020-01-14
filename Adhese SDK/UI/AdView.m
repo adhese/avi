@@ -73,17 +73,17 @@ BOOL isViewCurrentlyVisible;
 -(void)notifyTracker {
     [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Will notify the tracker for slot %@", self.ad.slotName]];
     
-    [[[APIManager alloc] initWithbaseUrl:nil] getForUrl:self.ad.trackerUrl withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
+    [[[APIManager alloc] initWithBaseUrl:nil] getForUrl:self.ad.trackerUrl withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
         
         if (response.error) {
             [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Failed to notify the tracker for slot %@. %@", self.ad.slotName, response.error.localizedDescription]];
-            //TODO: notify about error
+            [self.delegate trackerWasNotified:self withError:response.error];
             return;
         }
         
         [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Notified tracker for slot  %@", self.ad.slotName]];
         
-        [self.delegate trackerWasNotified:self];
+        [self.delegate trackerWasNotified:self withError:nil];
     }];
 }
 
@@ -91,17 +91,17 @@ BOOL isViewCurrentlyVisible;
     isViewImpressionCallInProgress = YES;
     [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Will notify the view impression for slot %@", self.ad.slotName]];
 
-    [[[APIManager alloc] initWithbaseUrl:nil] getForUrl:self.ad.trackerUrl withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
+    [[[APIManager alloc] initWithBaseUrl:nil] getForUrl:self.ad.trackerUrl withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
         
         if (response.error) {
             [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Failed to send view impression for slot %@. %@", self.ad.slotName, response.error.localizedDescription]];
-            //TODO: notify about error
+            [self.delegate viewImpressionWasNotified:self withError:response.error];
             return;
         }
         
         [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Notified tracker for slot %@", self.ad.slotName]];
         
-        [self.delegate viewImpressionWasNotified:self];
+        [self.delegate viewImpressionWasNotified:self  withError:nil];
     }];
 }
 
@@ -128,7 +128,7 @@ BOOL isViewCurrentlyVisible;
     
     isContentLoaded = YES;
     
-    [self.delegate adDidLoad:self];
+    [self.delegate adDidLoad:self withError:nil];
     
     [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Finished loading slot %@", self.ad.slotName]];
 

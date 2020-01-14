@@ -11,7 +11,7 @@
 
 @implementation APIManager
 
-- (id)initWithbaseUrl:(NSString *)baseUrl {
+- (id)initWithBaseUrl:(NSString * _Nullable)baseUrl {
     self = [super init];
     if (self) {
         self.baseUrl = baseUrl;

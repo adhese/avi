@@ -16,7 +16,7 @@ static NSString* BASE_URL = @"https://ads-%@.adhese.com/";
 - (id)initWithAccount:(NSString *)account {
     self = [super init];
     
-    self.apiManager = [[APIManager alloc] initWithbaseUrl:[NSString stringWithFormat:BASE_URL, account]];
+    self.apiManager = [[APIManager alloc] initWithBaseUrl:[NSString stringWithFormat:BASE_URL, account]];
     
     return self;
 }

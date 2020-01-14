@@ -15,16 +15,16 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol AdViewDelegate <NSObject>
 
 @optional
-- (void)adDidLoad:(id)adView;
+- (void)adDidLoad:(id)adView withError:(NSError * _Nullable)error;
 
 @optional
-- (void)trackerWasNotified:(id)adView;
+- (void)trackerWasNotified:(id)adView withError:(NSError * _Nullable)error;
 
 @optional
-- (void)viewImpressionWasNotified:(id)adView;
+- (void)viewImpressionWasNotified:(id)adView withError:(NSError * _Nullable)error;
 
 @optional
-- (void)adClicked:(id)adView;
+- (void)adClicked:(id)adView withError:(NSError * _Nullable)error;
 
 @end
 
