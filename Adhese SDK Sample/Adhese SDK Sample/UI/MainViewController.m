@@ -29,9 +29,32 @@
     options.slots = @[@"billboard", @"halfpage"];
     
     [Adhese loadAds:options withCompletionHandler:^(NSArray<Ad *> * _Nonnull ads) {
-        // TODO: do something with the ads...
-        NSLog(@"%@", ads);
+        
+        Ad *billboard = [self findAd:ads byType:@"billboard"];
+        Ad *halfPage = [self findAd:ads byType:@"halfpage"];
+
+        if (billboard) {
+            // TODO: assign ad to AdView
+        } else {
+            // TODO: set view hidden
+        }
+        
+        if (halfPage) {
+            // TODO: assign ad to AdView
+        } else {
+            // TODO: set view hidden
+        }
+        
     }];
+}
+
+- (Ad *)findAd:(NSArray<Ad *> *)ads byType:(NSString *)type {
+    for (Ad *ad in ads) {
+        if ([ad.adType isEqualToString:type]) {
+            return ad;
+        }
+    }
+    return nil;
 }
 
 @end
