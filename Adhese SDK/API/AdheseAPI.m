@@ -33,7 +33,7 @@ static NSString* BASE_URL = @"https://ads-%@.adhese.com/";
             [result addObject:ad];
         }
         
-        completionHandler([result copy]);
+        completionHandler([result copy], response.error);
     }];
 }
 

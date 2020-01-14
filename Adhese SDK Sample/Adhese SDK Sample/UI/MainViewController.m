@@ -30,8 +30,13 @@
     AdheseOptions *options = [[AdheseOptions alloc] initWithLocation:@"_demo_ster_a_"];
     options.cookieMode = kAll;
     options.slots = @[@"billboard", @"halfpage"];
-    
-    [Adhese loadAds:options withCompletionHandler:^(NSArray<Ad *> * _Nonnull ads) {
+  
+    [Adhese loadAds:options withCompletionHandler:^(NSArray<Ad *> * _Nonnull ads, NSError * _Nullable error) {
+        
+        if (error) {
+            NSLog(@"Failed loading ads with errors: %@", error.localizedDescription);
+            return;
+        }
         
         Ad *billboard = [self findAd:ads byType:@"billboard"];
         Ad *halfPage = [self findAd:ads byType:@"halfpage"];
@@ -42,13 +47,12 @@
         } else {
             // TODO: set view hidden
         }
-        
+
         if (halfPage) {
             // TODO: assign ad to AdView
         } else {
             // TODO: set view hidden
         }
-        
     }];
 }
 

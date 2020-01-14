@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^AdsLoadedResponseHandler)(NSArray<Ad *> *ads);// TODO: add error to callback
+typedef void (^AdsLoadedResponseHandler)(NSArray<Ad *> *ads, NSError * _Nullable error);
 
 @interface AdheseAPI : NSObject
 
