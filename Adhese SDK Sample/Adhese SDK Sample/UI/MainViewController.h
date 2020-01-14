@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AdheseSDK/AdView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <AdViewDelegate>
+@property (weak, nonatomic) IBOutlet AdView *adView;
 
 @end
 
