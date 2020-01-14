@@ -19,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // TODO: init view
+}
+
+- (void)loadAds {
     // Build Adhese options
     AdheseOptions *options = [[AdheseOptions alloc] initWithLocation:@"_demo_ster_a_"];
     options.cookieMode = kAll;
