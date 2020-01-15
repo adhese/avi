@@ -10,10 +10,11 @@
 #import "AdheseOptions.h"
 #import "APIManager.h"
 #import "Ad.h"
+#import "AdheseError.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^AdsLoadedResponseHandler)(NSArray<Ad *> *ads, NSError * _Nullable error);
+typedef void (^AdsLoadedResponseHandler)(NSArray<Ad *> *ads, AdheseError * _Nullable error);
 
 @interface AdheseAPI : NSObject
 

@@ -9,22 +9,23 @@
 #import <Webkit/WKWebView.h>
 #import <Webkit/WKNavigationDelegate.h>
 #import "Ad.h"
+#import "AdheseError.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol AdViewDelegate <NSObject>
 
 @optional
-- (void)adDidLoad:(id)adView withError:(NSError * _Nullable)error;
+- (void)adDidLoad:(id)adView withError:(AdheseError * _Nullable)error;
 
 @optional
-- (void)trackerWasNotified:(id)adView withError:(NSError * _Nullable)error;
+- (void)trackerWasNotified:(id)adView withError:(AdheseError * _Nullable)error;
 
 @optional
-- (void)viewImpressionWasNotified:(id)adView withError:(NSError * _Nullable)error;
+- (void)viewImpressionWasNotified:(id)adView withError:(AdheseError * _Nullable)error;
 
 @optional
-- (void)adClicked:(id)adView withError:(NSError * _Nullable)error;
+- (void)adClicked:(id)adView withError:(AdheseError * _Nullable)error;
 
 @end
 
