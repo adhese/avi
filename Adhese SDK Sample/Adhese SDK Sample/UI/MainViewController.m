@@ -20,7 +20,7 @@
     [super viewDidLoad];
     
     // TODO: init view
-    [self.adView setDelegate:self];
+    [self.bannerAdView setDelegate:self];
     
     [self loadAds];
 }
@@ -42,14 +42,14 @@
         Ad *halfPage = [self findAd:ads byType:@"halfpage"];
 
         if (billboard) {
-            [self.adView setAd:billboard];
+            [self.bannerAdView setAd:billboard];
             // TODO: assign ad to AdView
         } else {
             // TODO: set view hidden
         }
 
         if (halfPage) {
-            // TODO: assign ad to AdView
+            [self.halfpageAdView setAd:halfPage];
         } else {
             // TODO: set view hidden
         }

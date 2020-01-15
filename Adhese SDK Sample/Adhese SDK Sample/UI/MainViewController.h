@@ -12,7 +12,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MainViewController : UIViewController <AdViewDelegate>
-@property (weak, nonatomic) IBOutlet AdView *adView;
+@property (weak, nonatomic) IBOutlet AdView *bannerAdView;
+@property (weak, nonatomic) IBOutlet AdView *halfpageAdView;
 
 @end
 
