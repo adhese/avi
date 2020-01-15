@@ -31,10 +31,10 @@
     options.cookieMode = kAll;
     options.slots = @[@"billboard", @"halfpage"];
   
-    [Adhese loadAds:options withCompletionHandler:^(NSArray<Ad *> * _Nonnull ads, NSError * _Nullable error) {
+    [Adhese loadAds:options withCompletionHandler:^(NSArray<Ad *> * _Nonnull ads, AdheseError * _Nullable error) {
         
         if (error) {
-            NSLog(@"Failed loading ads with errors: %@", error.localizedDescription);
+            NSLog(@"Failed loading ads with errors: %@", error.description);
             return;
         }
         
@@ -66,15 +66,15 @@
 }
 
 #pragma mark - AdViewDelegate
--(void)adDidLoad:(id)adView {
+-(void)adDidLoad:(id)adView withError:(AdheseError * _Nullable)error {
     
 }
 
--(void)viewImpressionWasNotified:(id)adView {
+-(void)viewImpressionWasNotified:(id)adView withError:(AdheseError * _Nullable)error {
     
 }
 
--(void)trackerWasNotified:(id)adView {
+-(void)trackerWasNotified:(id)adView withError:(AdheseError * _Nullable)error {
     
 }
 

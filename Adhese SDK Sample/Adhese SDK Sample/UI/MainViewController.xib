@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
-                <outlet property="adView" destination="hrl-Et-pih" id="gy6-Nc-X37"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,20 +18,61 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrl-Et-pih" userLabel="adView" customClass="AdView">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <viewLayoutGuide key="safeArea" id="rnD-nc-xAq"/>
-                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXO-rD-6df" userLabel="scrollView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBM-FW-q74">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74Z-TB-ORt" userLabel="firstArticle">
+                                    <rect key="frame" x="20" y="20" width="414" height="782"/>
+                                    <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam porta auctor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque venenatis tellus ligula, sed porttitor turpis faucibus at. Curabitur sit amet cursus eros. Morbi cursus lectus sit amet imperdiet vestibulum. Nullam in turpis eros. Donec blandit dolor libero, et viverra nisl interdum et. Fusce dapibus dictum ipsum vitae scelerisque. Cras vehicula ipsum nec justo vestibulum mollis. Praesent mollis blandit urna vitae consequat. Mauris ultricies mi eget consectetur egestas. Vestibulum finibus purus velit, ut condimentum diam eleifend in. Nullam luctus magna dui, id scelerisque lorem tincidunt eget. Cras convallis ligula massa, non dignissim eros sollicitudin non. Morbi elit leo, porttitor consectetur dapibus ut, ultricies vel mi.
+
+In leo tellus, vehicula quis dolor vulputate, bibendum pellentesque diam. Phasellus ac risus at nunc mattis porta. Nam fringilla erat ut ultrices molestie. In hac habitasse platea dictumst. Maecenas lacinia nulla nec risus placerat malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque non sollicitudin neque. Aliquam non volutpat ligula, nec blandit justo. Cras accumsan condimentum lacus in dapibus. Vestibulum ac venenatis mauris.
+
+Nullam purus lorem, fringilla nec elementum quis, accumsan vitae turpis. Praesent pharetra mauris a dictum ullamcorper. Ut auctor sollicitudin sagittis. Aenean sapien lorem, consectetur et urna vel, vestibulum interdum odio. Sed interdum dignissim cursus. Curabitur elementum felis eros, sit amet varius quam varius et. Vestibulum eget eros quis tellus pharetra molestie. Donec tincidunt ac enim quis convallis. Vestibulum aliquet commodo ante nec dapibus. Aenean sapien ante, pulvinar a ante non, imperdiet dictum ligula. Ut augue lorem, pretium in enim nec, tempor aliquam libero. Donec viverra laoreet elit eget tempor. Sed a metus viverra, maximus est nec, faucibus risus.</mutableString>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofs-nP-3cO" userLabel="secondArticle">
+                                    <rect key="frame" x="8" y="810" width="414" height="782"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam porta auctor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque venenatis tellus ligula, sed porttitor turpis faucibus at. Curabitur sit amet cursus eros. Morbi cursus lectus sit amet imperdiet vestibulum. Nullam in turpis eros. Donec blandit dolor libero, et viverra nisl interdum et. Fusce dapibus dictum ipsum vitae scelerisque. Cras vehicula ipsum nec justo vestibulum mollis. Praesent mollis blandit urna vitae consequat. Mauris ultricies mi eget consectetur egestas. Vestibulum finibus purus velit, ut condimentum diam eleifend in. Nullam luctus magna dui, id scelerisque lorem tincidunt eget. Cras convallis ligula massa, non dignissim eros sollicitudin non. Morbi elit leo, porttitor consectetur dapibus ut, ultricies vel mi.
+
+In leo tellus, vehicula quis dolor vulputate, bibendum pellentesque diam. Phasellus ac risus at nunc mattis porta. Nam fringilla erat ut ultrices molestie. In hac habitasse platea dictumst. Maecenas lacinia nulla nec risus placerat malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque non sollicitudin neque. Aliquam non volutpat ligula, nec blandit justo. Cras accumsan condimentum lacus in dapibus. Vestibulum ac venenatis mauris.
+
+Nullam purus lorem, fringilla nec elementum quis, accumsan vitae turpis. Praesent pharetra mauris a dictum ullamcorper. Ut auctor sollicitudin sagittis. Aenean sapien lorem, consectetur et urna vel, vestibulum interdum odio. Sed interdum dignissim cursus. Curabitur elementum felis eros, sit amet varius quam varius et. Vestibulum eget eros quis tellus pharetra molestie. Donec tincidunt ac enim quis convallis. Vestibulum aliquet commodo ante nec dapibus. Aenean sapien ante, pulvinar a ante non, imperdiet dictum ligula. Ut augue lorem, pretium in enim nec, tempor aliquam libero. Donec viverra laoreet elit eget tempor. Sed a metus viverra, maximus est nec, faucibus risus.</mutableString>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1000" id="Aa4-AG-TAG"/>
+                                <constraint firstItem="74Z-TB-ORt" firstAttribute="height" secondItem="cBM-FW-q74" secondAttribute="height" id="G2c-Tp-V0h"/>
+                                <constraint firstItem="74Z-TB-ORt" firstAttribute="width" secondItem="cBM-FW-q74" secondAttribute="width" id="e3a-dD-rf6"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="cBM-FW-q74" firstAttribute="leading" secondItem="zXO-rD-6df" secondAttribute="leading" id="Hnf-ta-j5a"/>
+                        <constraint firstItem="cBM-FW-q74" firstAttribute="top" secondItem="zXO-rD-6df" secondAttribute="top" id="Owu-qH-faq"/>
+                        <constraint firstItem="cBM-FW-q74" firstAttribute="bottom" secondItem="zXO-rD-6df" secondAttribute="bottom" id="Svk-zN-2Vn"/>
+                        <constraint firstItem="cBM-FW-q74" firstAttribute="trailing" secondItem="zXO-rD-6df" secondAttribute="trailing" id="u7m-4U-zR4"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="hrl-Et-pih" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="HSn-Ag-PNS"/>
-                <constraint firstItem="hrl-Et-pih" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="Ybl-ea-Tw8"/>
-                <constraint firstItem="hrl-Et-pih" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="df3-LX-YsU"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="hrl-Et-pih" secondAttribute="trailing" id="fj1-8l-mkA"/>
+                <constraint firstItem="zXO-rD-6df" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="1OV-oX-jrF"/>
+                <constraint firstItem="zXO-rD-6df" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6fI-Yv-hpv"/>
+                <constraint firstItem="zXO-rD-6df" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="L10-BS-HN6"/>
+                <constraint firstItem="cBM-FW-q74" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Ma2-Yo-ysw"/>
+                <constraint firstItem="zXO-rD-6df" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="n9w-8y-iGK"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <viewLayoutGuide key="safeArea" id="3pA-Lu-jAA"/>
             <point key="canvasLocation" x="131.8840579710145" y="123.88392857142857"/>
         </view>
     </objects>

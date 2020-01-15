@@ -35,6 +35,9 @@
 		4999DB9723C73D1B0048F138 /* AdheseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB9523C73D1B0048F138 /* AdheseAPI.m */; };
 		4999DB9A23C73DA60048F138 /* APIManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB9823C73DA60048F138 /* APIManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4999DB9B23C73DA60048F138 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999DB9923C73DA60048F138 /* APIManager.m */; };
+		49C7F1DF23CEF52100205C19 /* AdheseError.h in Headers */ = {isa = PBXBuildFile; fileRef = 49C7F1DD23CEF52100205C19 /* AdheseError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49C7F1E023CEF52100205C19 /* AdheseError.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C7F1DE23CEF52100205C19 /* AdheseError.m */; };
+		49C7F1E223CEF56400205C19 /* AdheseErrorCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 49C7F1E123CEF56400205C19 /* AdheseErrorCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		4999DB9523C73D1B0048F138 /* AdheseAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdheseAPI.m; sourceTree = "<group>"; };
 		4999DB9823C73DA60048F138 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		4999DB9923C73DA60048F138 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		49C7F1DD23CEF52100205C19 /* AdheseError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseError.h; sourceTree = "<group>"; };
+		49C7F1DE23CEF52100205C19 /* AdheseError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdheseError.m; sourceTree = "<group>"; };
+		49C7F1E123CEF56400205C19 /* AdheseErrorCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseErrorCode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				4999DB9323C720990048F138 /* API */,
+				49C7F1DC23CEF3EE00205C19 /* Errors */,
 				4999DB7723C5E0F80048F138 /* Logging */,
 				4999DB8023C609A70048F138 /* Parameters */,
 				49621A3423CD9CAE00A3CBCE /* UI */,
@@ -173,6 +180,16 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		49C7F1DC23CEF3EE00205C19 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				49C7F1DD23CEF52100205C19 /* AdheseError.h */,
+				49C7F1DE23CEF52100205C19 /* AdheseError.m */,
+				49C7F1E123CEF56400205C19 /* AdheseErrorCode.h */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -186,6 +203,7 @@
 				49621A3223CCADB400A3CBCE /* JSONUtils.h in Headers */,
 				4999DB7A23C5E10A0048F138 /* AdheseLogger.h in Headers */,
 				49621A2E23CC77E400A3CBCE /* DeviceUtils.h in Headers */,
+				49C7F1E223CEF56400205C19 /* AdheseErrorCode.h in Headers */,
 				4999DB8323C609C40048F138 /* Device.h in Headers */,
 				4999DB8E23C7163A0048F138 /* AdheseParameter.h in Headers */,
 				4999DB8C23C70B5F0048F138 /* DeviceType.h in Headers */,
@@ -196,6 +214,7 @@
 				4999DB8723C609D80048F138 /* CookieMode.h in Headers */,
 				49621A3723CD9CD700A3CBCE /* AdView.h in Headers */,
 				4999DB8A23C60A5D0048F138 /* URLParameter.h in Headers */,
+				49C7F1DF23CEF52100205C19 /* AdheseError.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49C7F1E023CEF52100205C19 /* AdheseError.m in Sources */,
 				4999DB9723C73D1B0048F138 /* AdheseAPI.m in Sources */,
 				49621A3823CD9CD700A3CBCE /* AdView.m in Sources */,
 				49621A2A23C8AD6B00A3CBCE /* AdheseAPIResponse.m in Sources */,
