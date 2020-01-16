@@ -16,13 +16,23 @@
 
 @implementation MainViewController
 
+#pragma mark - Initialisation
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setDelegates];
+    [self initView];
+    [self loadAds];
+}
+
+- (void)initView {
+    [self setTitle:@"Adhese SDK"];
+}
+
+-(void)setDelegates {
     [self.billboardAdview setDelegate:self];
     [self.halfpageAdView setDelegate:self];
-
-    [self loadAds];
 }
 
 - (void)loadAds {
@@ -55,6 +65,8 @@
     }];
 }
 
+#pragma mark - Helpers
+
 - (Ad *)findAd:(NSArray<Ad *> *)ads byType:(NSString *)type {
     for (Ad *ad in ads) {
         if ([ad.adType isEqualToString:type]) {
@@ -65,6 +77,7 @@
 }
 
 #pragma mark - AdViewDelegate
+
 -(void)adDidLoad:(id)adView withError:(AdheseError * _Nullable)error {
     
 }
