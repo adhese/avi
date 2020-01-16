@@ -55,6 +55,7 @@ BOOL isViewCurrentlyVisible;
     self.navigationDelegate = self;
     self.opaque = NO;
     self.backgroundColor = [UIColor clearColor];
+    [self targetForAction:@(:didClick) withSender:UIControlEventTouchUpInside];
 }
 
 #pragma mark - Getters/Setters
@@ -138,8 +139,18 @@ BOOL isViewCurrentlyVisible;
     [self triggerViewImpressionWhenVisible];
 }
 
--(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+-(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
+    if (self.shouldOpenAd) {
+        [[UIApplication sharedApplication] openURL:navigationAction.request.URL options:nil completionHandler:nil];
+    }
+    
+    decisionHandler(WKNavigationActionPolicyCancel);
+}
+
+#pragma mark - Events
+-(IBAction)didClick:(id)sender {
+    [self.delegate adClicked:self withError:nil];
 }
 
 #pragma mark - Overrides
@@ -149,5 +160,7 @@ BOOL isViewCurrentlyVisible;
     
     isViewCurrentlyVisible = self.window != nil;
 }
+
+
 
 @end
