@@ -53,6 +53,8 @@ BOOL isViewCurrentlyVisible;
 -(void)bootstrap {
     self.translatesAutoresizingMaskIntoConstraints = NO;
     self.navigationDelegate = self;
+    self.opaque = NO;
+    self.backgroundColor = [UIColor clearColor];
 }
 
 #pragma mark - Getters/Setters
