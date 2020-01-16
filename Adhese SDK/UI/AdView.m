@@ -55,6 +55,7 @@ BOOL isViewCurrentlyVisible;
     self.navigationDelegate = self;
     self.opaque = NO;
     self.backgroundColor = [UIColor clearColor];
+    self.shouldOpenAd = YES;
     [self targetForAction:@(:didClick) withSender:UIControlEventTouchUpInside];
 }
 

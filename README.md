@@ -58,3 +58,6 @@ If you want to receive delegate events you can apply the `AdViewDelegate` to you
     - (void)trackerWasNotified:(id)adView withError:(AdheseError * _Nullable)error;             // Triggers when the tracker URL has been called.
     - (void)viewImpressionWasNotified:(id)adView withError:(AdheseError * _Nullable)error;      // Triggers when the ad has become visible in the viewport
     - (void)adClicked:(id)adView withError:(AdheseError * _Nullable)error;                      // Triggers when the advertisement was clicked.
+
+### Extra
+Set `adView.shouldOpenAd = NO` to enable/disable automatic opening of the ad in the browser. The default value is true, so it will open automatically. However, when setting it to false and implementing the `adClicked` delegate you can implement custom behaviour.
