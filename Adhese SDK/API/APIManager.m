@@ -31,12 +31,15 @@
         
         if (error) {
             [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Error: %@", error.localizedDescription]];
+            AdheseAPIResponse *apiResponse = [[AdheseAPIResponse alloc] initWithData:data withError:[[AdheseError alloc] initWithErrorCode:kNetworkError]];
+            callback(apiResponse);
+            return;
         }
         
         NSString *stringifiedResponse = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         [AdheseLogger logEvent:NETWORK_RESPONSE withMessage:[NSString stringWithFormat:@"Response %@", stringifiedResponse]];
         
-        AdheseAPIResponse *apiResponse = [[AdheseAPIResponse alloc] initWithData:data withError:error];
+        AdheseAPIResponse *apiResponse = [[AdheseAPIResponse alloc] initWithData:data withError:nil];
         callback(apiResponse);
     }];
 

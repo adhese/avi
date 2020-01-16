@@ -14,7 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^AdsLoadedResponseHandler)(NSArray<Ad *> *ads, AdheseError * _Nullable error);
+typedef void (^AdsLoadedResponseHandler)(NSArray<Ad *> * _Nullable ads, AdheseError * _Nullable error);
 
 @interface AdheseAPI : NSObject
 

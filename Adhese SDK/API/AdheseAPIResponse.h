@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AdheseError.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AdheseAPIResponse : NSObject
 
 @property (nonatomic, strong) NSData* data;
-@property (nonatomic, strong, nullable) NSError* error;
+@property (nonatomic, strong, nullable) AdheseError* error;
 
-- (id)initWithData:(NSData *)data withError:(NSError * _Nullable)error;
+- (id)initWithData:(NSData *)data withError:(AdheseError * _Nullable)error;
 
 @end
 

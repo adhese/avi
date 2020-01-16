@@ -76,7 +76,7 @@ BOOL isViewCurrentlyVisible;
     [[[APIManager alloc] initWithBaseUrl:nil] getForUrl:self.ad.trackerUrl withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
         
         if (response.error) {
-            [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Failed to notify the tracker for slot %@. %@", self.ad.slotName, response.error.localizedDescription]];
+            [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Failed to notify the tracker for slot %@. %@", self.ad.slotName, response.error.description]];
             [self.delegate trackerWasNotified:self withError:response.error];
             return;
         }
@@ -94,7 +94,7 @@ BOOL isViewCurrentlyVisible;
     [[[APIManager alloc] initWithBaseUrl:nil] getForUrl:self.ad.trackerUrl withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
         
         if (response.error) {
-            [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Failed to send view impression for slot %@. %@", self.ad.slotName, response.error.localizedDescription]];
+            [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Failed to send view impression for slot %@. %@", self.ad.slotName, response.error.description]];
             [self.delegate viewImpressionWasNotified:self withError:response.error];
             return;
         }

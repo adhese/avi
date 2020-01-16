@@ -8,6 +8,7 @@
 
 #import "AdheseAPI.h"
 #import "AdheseLogger.h"
+#import "AdheseError.h"
 
 static NSString* BASE_URL = @"https://ads-%@.adhese.com/";
 
@@ -25,7 +26,15 @@ static NSString* BASE_URL = @"https://ads-%@.adhese.com/";
     NSString *url = [NSString stringWithFormat:@"json%@", [options getAsURL]];
     
     [self.apiManager getForUrl:url withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
-        NSArray* adsData = [self convertDataToDictionary:response.data];
+        NSArray* adsData;
+        
+        @try {
+            adsData = [self convertDataToDictionary:response.data];
+        } @catch (NSException *exception)  {
+            completionHandler(nil, [[AdheseError alloc] initWithErrorCode:kParseError]);
+            return;
+        }
+
         NSMutableArray<Ad *> * result = [NSMutableArray array];
         
         for (NSDictionary *entry in adsData) {
@@ -43,6 +52,7 @@ static NSString* BASE_URL = @"https://ads-%@.adhese.com/";
 
     if (!jsonArray) {
         [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Parsing error: %@", error.localizedDescription]];
+        [NSException raise:@"Parsing error" format:@"Something went wrong parsing the response."];
     }
 
     return jsonArray;
