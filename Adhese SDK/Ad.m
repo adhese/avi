@@ -29,7 +29,7 @@
         }
         
         if ([data objectForKey:kViewableImpressionUrl]) {
-            self.viewableImpressionurl = [data objectForKey:kViewableImpressionUrl];
+            self.viewableImpressionUrl = [data objectForKey:kViewableImpressionUrl];
         }
         
         if ([data objectForKey:kAdType]) {

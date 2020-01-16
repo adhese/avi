@@ -109,8 +109,8 @@ BOOL isViewCurrentlyVisible;
     if (!hasViewImpressionBeenCalled
         && !isViewImpressionCallInProgress
         && self.ad
-        && self.ad.viewableImpressionurl
-        && self.ad.viewableImpressionurl.length > 0
+        && self.ad.viewableImpressionUrl
+        && self.ad.viewableImpressionUrl.length > 0
         && !self.isHidden
         && isViewCurrentlyVisible) {
             [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"%@ is visible", self.ad.slotName]];
