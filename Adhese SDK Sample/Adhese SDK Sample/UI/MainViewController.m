@@ -29,18 +29,26 @@ AdView *halfPageAdview;
     
     [self setDelegates];
     [self initView];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    billboardAdview = [[AdView alloc] initWithFrame:self.billboardContainerView.frame];
+    [self.billboardContainerView addSubview:billboardAdview];
+    
+    halfPageAdview = [[AdView alloc] initWithFrame:self.halfPageContainer.frame];
+    halfPageAdview.frame = self.halfPageContainer.frame;
+    [self.halfPageContainer addSubview:halfPageAdview];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
     [self loadAds];
 }
 
 - (void)initView {
-    billboardAdview = [AdView new];
-    billboardAdview.frame = self.billboardContainerView.frame;
-    [self.billboardContainerView addSubview:billboardAdview];
-    
-    halfPageAdview = [AdView new];
-    halfPageAdview.frame = self.halfPageContainer.frame;
-    [self.halfPageContainer addSubview:halfPageAdview];
-    
     [self setTitle:@"Adhese SDK"];
     
     UIBarButtonItem *showEventsButton = [[UIBarButtonItem alloc] initWithTitle:@"Events" style:UIBarButtonItemStylePlain target:self action:@selector(showEvents:)];
