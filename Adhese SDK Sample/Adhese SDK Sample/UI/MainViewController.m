@@ -17,6 +17,8 @@
 @implementation MainViewController
 
 NSMutableArray<NSString *> *events;
+AdView *billboardAdview;
+AdView *halfPageAdview;
 
 #pragma mark - Initialisation
 
@@ -31,6 +33,14 @@ NSMutableArray<NSString *> *events;
 }
 
 - (void)initView {
+    billboardAdview = [AdView new];
+    billboardAdview.frame = self.billboardContainerView.frame;
+    [self.billboardContainerView addSubview:billboardAdview];
+    
+    halfPageAdview = [AdView new];
+    halfPageAdview.frame = self.halfPageContainer.frame;
+    [self.halfPageContainer addSubview:halfPageAdview];
+    
     [self setTitle:@"Adhese SDK"];
     
     UIBarButtonItem *showEventsButton = [[UIBarButtonItem alloc] initWithTitle:@"Events" style:UIBarButtonItemStylePlain target:self action:@selector(showEvents:)];
@@ -39,8 +49,8 @@ NSMutableArray<NSString *> *events;
 }
 
 -(void)setDelegates {
-    [self.billboardAdview setDelegate:self];
-    [self.halfpageAdView setDelegate:self];
+    [billboardAdview setDelegate:self];
+    [halfPageAdview setDelegate:self];
 }
 
 - (void)loadAds {
@@ -60,15 +70,15 @@ NSMutableArray<NSString *> *events;
         Ad *halfPage = [self findAd:ads byType:@"halfpage"];
 
         if (billboard) {
-            [self.billboardAdview setAd:billboard];
+            [billboardAdview setAd:billboard];
         } else {
-            [self.billboardAdview setHidden:YES];
+            [billboardAdview setHidden:YES];
         }
 
         if (halfPage) {
-            [self.halfpageAdView setAd:halfPage];
+            [halfPageAdview setAd:halfPage];
         } else {
-            [self.halfpageAdView setHidden:YES];
+            [halfPageAdview setHidden:YES];
         }
     }];
 }

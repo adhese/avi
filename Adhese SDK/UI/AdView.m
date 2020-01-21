@@ -7,7 +7,7 @@
 //
 
 #import "AdView.h"
-#import <WebKit/WKWebViewConfiguration.h>
+#import <WebKit/WebKit.h>
 #import "AdheseLogger.h"
 #import "APIManager.h"
 
@@ -56,7 +56,7 @@ BOOL isViewCurrentlyVisible;
     self.opaque = NO;
     self.backgroundColor = [UIColor clearColor];
     self.shouldOpenAd = YES;
-    [self targetForAction:@(:didClick) withSender:UIControlEventTouchUpInside];
+//    [self targetForAction:@(:didClick) withSender:UIControlEventTouchUpInside];
 }
 
 #pragma mark - Getters/Setters
@@ -142,8 +142,8 @@ BOOL isViewCurrentlyVisible;
 
 -(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
-    if (self.shouldOpenAd) {
-        [[UIApplication sharedApplication] openURL:navigationAction.request.URL options:nil completionHandler:nil];
+    if (self.shouldOpenAd && navigationAction.request.URL) {
+        [[UIApplication sharedApplication] openURL:navigationAction.request.URL options:@{} completionHandler:nil];
     }
     
     decisionHandler(WKNavigationActionPolicyCancel);
