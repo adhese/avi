@@ -56,7 +56,6 @@ BOOL isViewCurrentlyVisible;
     self.opaque = NO;
     self.backgroundColor = [UIColor clearColor];
     self.shouldOpenAd = YES;
-//    [self targetForAction:@(:didClick) withSender:UIControlEventTouchUpInside];
 }
 
 #pragma mark - Getters/Setters
@@ -142,16 +141,18 @@ BOOL isViewCurrentlyVisible;
 
 -(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
-    if (self.shouldOpenAd && navigationAction.request.URL) {
-        [[UIApplication sharedApplication] openURL:navigationAction.request.URL options:@{} completionHandler:nil];
+    if (!isContentLoaded) {
+        decisionHandler(WKNavigationActionPolicyAllow);
+        return;
     }
     
-    decisionHandler(WKNavigationActionPolicyCancel);
-}
+    if (self.shouldOpenAd && navigationAction.request.URL) {
+        [[UIApplication sharedApplication] openURL:navigationAction.request.URL options:@{} completionHandler:nil];
+        decisionHandler(WKNavigationActionPolicyAllow);
+        return;
+    }
 
-#pragma mark - Events
--(IBAction)didClick:(id)sender {
-    [self.delegate adClicked:self withError:nil];
+    decisionHandler(WKNavigationActionPolicyCancel);
 }
 
 #pragma mark - Overrides
