@@ -23,7 +23,7 @@
     NSMutableString *result = [[NSMutableString alloc] initWithString:@""];
     
     for (NSString* slot in self.slots) {
-        [result appendFormat:@"/%@%@%@", kSlot, self.location, slot];
+        [result appendFormat:@"/%@%@-%@", kSlot, self.location, slot];
     }
     
     [result appendFormat:@"/%@%@", kCookieMode, self.cookieMode];

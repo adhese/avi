@@ -25,15 +25,16 @@
     return self;
 }
 
+
 - (NSString *)getAsURL {
     NSMutableString *result = [[NSMutableString alloc] initWithString:@""];    
     
-    if (self.info && [self.info length] != 0) {
-        [result appendFormat:@"/%@%@", kDeviceId, self.info];
-    }
-    
     if (self.type && [self.type length] != 0) {
         [result appendFormat:@"/%@%@", kDeviceType, self.type];
+    }
+    
+    if (self.info && [self.info length] != 0) {
+        [result appendFormat:@"/%@%@", kDeviceId, self.info];
     }
     
     if (self.brand && [self.brand length] != 0) {

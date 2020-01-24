@@ -7,7 +7,7 @@
 //
 
 static NSString* kSlot = @"sl";
-static NSString* kDeviceType = @"dt";
+static NSString* kDeviceType = @"de";
 static NSString* kDeviceBrand = @"br";
-static NSString* kDeviceId = @"de";
+static NSString* kDeviceId = @"dt";
 static NSString* kCookieMode = @"tl";

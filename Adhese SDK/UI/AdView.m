@@ -176,15 +176,6 @@ BOOL isViewCurrentlyVisible;
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 
-
-- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-    
-}
-
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-    
-}
-
 #pragma mark - Overrides
 
 - (void)didMoveToWindow {

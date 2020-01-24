@@ -31,7 +31,9 @@ static NSString* BASE_URL = @"https://ads-%@.adhese.com/";
         @try {
             adsData = [self convertDataToDictionary:response.data];
         } @catch (NSException *exception)  {
-            completionHandler(nil, [[AdheseError alloc] initWithErrorCode:kParseError]);
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+                completionHandler(nil, [[AdheseError alloc] initWithErrorCode:kParseError]);
+            }];
             return;
         }
 
@@ -42,7 +44,9 @@ static NSString* BASE_URL = @"https://ads-%@.adhese.com/";
             [result addObject:ad];
         }
         
-        completionHandler([result copy], response.error);
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+            completionHandler([result copy], response.error);
+        }];
     }];
 }
 
