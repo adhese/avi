@@ -27,7 +27,6 @@ AdView *halfPageAdview;
     
     events = [[NSMutableArray alloc] init];
     
-    [self setDelegates];
     [self initView];
 }
 
@@ -35,11 +34,14 @@ AdView *halfPageAdview;
     [super viewDidLayoutSubviews];
     
     billboardAdview = [[AdView alloc] initWithFrame:self.billboardContainerView.frame];
+    billboardAdview.frame = self.billboardContainerView.frame;
     [self.billboardContainerView addSubview:billboardAdview];
     
-    halfPageAdview = [[AdView alloc] initWithFrame:self.halfPageContainer.frame];
-    halfPageAdview.frame = self.halfPageContainer.frame;
-    [self.halfPageContainer addSubview:halfPageAdview];
+    halfPageAdview = [[AdView alloc] initWithFrame:self.halfPageContainerView.frame];
+    halfPageAdview.frame = self.halfPageContainerView.frame;
+    [self.halfPageContainerView addSubview:halfPageAdview];
+    
+    [self setDelegates];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

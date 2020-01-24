@@ -3,16 +3,17 @@
     <style>
         iframe {
             transform-origin: top left;
-            transform: scale(%i, %i);
+            transform: scale(%f, %f);
         }
 
-        body {
+        html, body, iframe {
             margin: 0px;
+            padding: 0px;
         }
 
         a, div, img {
-            width: %ipx;
-            height: %ipx;
+            width: %fpx;
+            height: %fpx;
             margin: 0 auto;
             display: block;
         }

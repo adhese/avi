@@ -10,6 +10,7 @@
 #import <WebKit/WebKit.h>
 #import "AdheseLogger.h"
 #import "APIManager.h"
+#import "Adhese.h"
 
 @implementation AdView
 
@@ -51,7 +52,6 @@ BOOL isViewCurrentlyVisible;
 }
 
 -(void)bootstrap {
-    self.translatesAutoresizingMaskIntoConstraints = NO;
     self.navigationDelegate = self;
     self.opaque = NO;
     self.backgroundColor = [UIColor clearColor];
@@ -62,6 +62,7 @@ BOOL isViewCurrentlyVisible;
 
 -(void)setAd:(Ad *)ad {
     _ad = ad;
+    isContentLoaded = NO;
     [self loadAd];
 }
 
@@ -69,8 +70,27 @@ BOOL isViewCurrentlyVisible;
 
 -(void)loadAd {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
-        [self loadHTMLString:self.ad.content baseURL:nil];
+        [self loadHTMLString:[self wrapinHtmlWrapper] baseURL:nil];
     }];
+}
+
+-(NSString *)wrapinHtmlWrapper {
+    double scale = [self determineContentScale];
+    double height = self.ad ? self.ad.height * scale : self.frame.size.height;
+    double width = self.ad ? self.ad.width * scale : self.frame.size.width;
+    
+    return [NSString stringWithFormat:[Adhese getHtmlWrapper], scale, scale, width, height, self.ad.content];
+}
+
+-(double)determineContentScale {
+    return 1;
+//    if (!self.ad) { return 1; }
+//
+//    if (self.ad.width < self.frame.size.height) {
+//        return self.frame.size.height / self.ad.height;
+//    } else {
+//        return self.frame.size.width / self.ad.width;
+//    }
 }
 
 -(void)notifyTracker {
@@ -140,19 +160,29 @@ BOOL isViewCurrentlyVisible;
 }
 
 -(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    
+
     if (!isContentLoaded) {
         decisionHandler(WKNavigationActionPolicyAllow);
         return;
     }
-    
-    if (self.shouldOpenAd && navigationAction.request.URL) {
+
+    BOOL isClickEvent = navigationAction.navigationType == WKNavigationTypeLinkActivated;
+    if (self.shouldOpenAd && [navigationAction.request.URL.absoluteString hasPrefix:@"http"] && isClickEvent) {
         [[UIApplication sharedApplication] openURL:navigationAction.request.URL options:@{} completionHandler:nil];
         decisionHandler(WKNavigationActionPolicyAllow);
         return;
     }
 
-    decisionHandler(WKNavigationActionPolicyCancel);
+    decisionHandler(WKNavigationActionPolicyAllow);
+}
+
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    
+}
+
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    
 }
 
 #pragma mark - Overrides
