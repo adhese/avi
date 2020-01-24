@@ -17,6 +17,7 @@ static bool isInitialized;
 static NSString* adheseAccount;
 static AdheseAPI* adheseAPI;
 static Device* device;
+static NSString* htmlWrapper;
 static NSString* kOSName = @"iOS";
 
 +(void)initializeSdk:(NSString*)account withDebuggingEnabled:(bool)enabled {
@@ -35,6 +36,7 @@ static NSString* kOSName = @"iOS";
     adheseAccount = account;
     adheseAPI = [[AdheseAPI alloc] initWithAccount:adheseAccount];
     device = [self determineDevice];
+    htmlWrapper = [self loadHtmlWrapper];
     isInitialized = YES;
 
     [AdheseLogger logEvent:SDK_EVENT withMessage:@"Initialised the SDK."];
@@ -67,6 +69,16 @@ static NSString* kOSName = @"iOS";
 
 +(NSString *)getAccount {
     return adheseAccount;
+}
+
++(NSString *)getHtmlWrapper {
+    return htmlWrapper;
+}
+
++(NSString *)loadHtmlWrapper {
+    NSString *resDir = [NSString stringWithFormat:@"%@/Frameworks/AdheseSDK.framework", [[NSBundle mainBundle] resourcePath]];
+    NSString *filePath = [NSString stringWithFormat:@"%@/adhese_ad_wrapper.html", resDir];
+    return [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
 }
 
 @end

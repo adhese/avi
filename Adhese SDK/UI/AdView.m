@@ -163,6 +163,4 @@ BOOL isViewCurrentlyVisible;
     isViewCurrentlyVisible = self.window != nil;
 }
 
-
-
 @end
