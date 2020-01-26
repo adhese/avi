@@ -33,21 +33,19 @@ AdView *halfPageAdview;
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    billboardAdview = [[AdView alloc] initWithFrame:self.billboardContainerView.frame];
-    billboardAdview.frame = self.billboardContainerView.frame;
+    billboardAdview = [[AdView alloc] initWithFrame:self.billboardContainerView.bounds];
     [self.billboardContainerView addSubview:billboardAdview];
     
-    halfPageAdview = [[AdView alloc] initWithFrame:self.halfPageContainerView.frame];
-    halfPageAdview.frame = self.halfPageContainerView.frame;
+    halfPageAdview = [[AdView alloc] initWithFrame:self.halfPageContainerView.bounds];
     [self.halfPageContainerView addSubview:halfPageAdview];
     
     [self setDelegates];
+    
+    [self loadAds];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    [self loadAds];
 }
 
 - (void)initView {

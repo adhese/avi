@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MainViewController : UIViewController <AdViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *halfPageContainerView;
-@property (weak, nonatomic) IBOutlet UIView *billboardContainerView;
+@property (weak, nonatomic) IBOutlet UIStackView *billboardContainerView;
+@property (weak, nonatomic) IBOutlet UIStackView *halfPageContainerView;
 
 @end
 
