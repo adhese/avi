@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(Device *)determineDevice;
 +(void)loadAds:(AdheseOptions *)options withCompletionHandler:(AdsLoadedResponseHandler)callback;
 +(NSString *)getHtmlWrapper;
++(NSString *)getSizeReporterScript;
 
 @end
 

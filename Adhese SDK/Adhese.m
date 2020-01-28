@@ -10,6 +10,7 @@
 #import "AdheseLogger.h"
 #import <UIKit/UIKit.h>
 #import "DeviceUtils.h"
+#import "FileUtils.h"
 
 @implementation Adhese
 
@@ -18,6 +19,7 @@ static NSString* adheseAccount;
 static AdheseAPI* adheseAPI;
 static Device* device;
 static NSString* htmlWrapper;
+static NSString* sizeReporterScript;
 static NSString* kOSName = @"iOS";
 
 +(void)initializeSdk:(NSString*)account withDebuggingEnabled:(bool)enabled {
@@ -36,7 +38,8 @@ static NSString* kOSName = @"iOS";
     adheseAccount = account;
     adheseAPI = [[AdheseAPI alloc] initWithAccount:adheseAccount];
     device = [self determineDevice];
-    htmlWrapper = [self loadHtmlWrapper];
+    htmlWrapper = [FileUtils loadSDKFileWithName:@"adhese_ad_wrapper.html"];
+    sizeReporterScript = [FileUtils loadSDKFileWithName:@"adhese_size_reporter.js"];
     isInitialized = YES;
 
     [AdheseLogger logEvent:SDK_EVENT withMessage:@"Initialised the SDK."];
@@ -75,10 +78,8 @@ static NSString* kOSName = @"iOS";
     return htmlWrapper;
 }
 
-+(NSString *)loadHtmlWrapper {
-    NSString *resDir = [NSString stringWithFormat:@"%@/Frameworks/AdheseSDK.framework", [[NSBundle mainBundle] resourcePath]];
-    NSString *filePath = [NSString stringWithFormat:@"%@/adhese_ad_wrapper.html", resDir];
-    return [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
++(NSString *)getSizeReporterScript {
+    return sizeReporterScript;
 }
 
 @end

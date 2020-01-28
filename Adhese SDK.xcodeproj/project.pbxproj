@@ -15,6 +15,9 @@
 		49621A3323CCADB400A3CBCE /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 49621A3123CCADB400A3CBCE /* JSONUtils.m */; };
 		49621A3723CD9CD700A3CBCE /* AdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 49621A3523CD9CD700A3CBCE /* AdView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49621A3823CD9CD700A3CBCE /* AdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49621A3623CD9CD700A3CBCE /* AdView.m */; };
+		497B6C5323E03F7900376B4D /* adhese_size_reporter.js in Resources */ = {isa = PBXBuildFile; fileRef = 497B6C5223E03F7900376B4D /* adhese_size_reporter.js */; };
+		497B6C5623E040FB00376B4D /* FileUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 497B6C5423E040FB00376B4D /* FileUtils.h */; };
+		497B6C5723E040FB00376B4D /* FileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B6C5523E040FB00376B4D /* FileUtils.m */; };
 		49828DA423DAE36C003EA345 /* adhese_ad_wrapper.html in Resources */ = {isa = PBXBuildFile; fileRef = 49828DA323DAE36C003EA345 /* adhese_ad_wrapper.html */; };
 		4999DB6D23C5CD460048F138 /* AdheseSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB6B23C5CD460048F138 /* AdheseSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4999DB7523C5D8B50048F138 /* Adhese.h in Headers */ = {isa = PBXBuildFile; fileRef = 4999DB7323C5D8B50048F138 /* Adhese.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -50,6 +53,9 @@
 		49621A3123CCADB400A3CBCE /* JSONUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
 		49621A3523CD9CD700A3CBCE /* AdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdView.h; sourceTree = "<group>"; };
 		49621A3623CD9CD700A3CBCE /* AdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdView.m; sourceTree = "<group>"; };
+		497B6C5223E03F7900376B4D /* adhese_size_reporter.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = adhese_size_reporter.js; sourceTree = "<group>"; };
+		497B6C5423E040FB00376B4D /* FileUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
+		497B6C5523E040FB00376B4D /* FileUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileUtils.m; sourceTree = "<group>"; };
 		49828DA323DAE36C003EA345 /* adhese_ad_wrapper.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = adhese_ad_wrapper.html; sourceTree = "<group>"; };
 		4999DB6823C5CD460048F138 /* AdheseSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdheseSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4999DB6B23C5CD460048F138 /* AdheseSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseSDK.h; sourceTree = "<group>"; };
@@ -95,6 +101,8 @@
 				49621A2D23CC77E400A3CBCE /* DeviceUtils.m */,
 				49621A3023CCADB400A3CBCE /* JSONUtils.h */,
 				49621A3123CCADB400A3CBCE /* JSONUtils.m */,
+				497B6C5423E040FB00376B4D /* FileUtils.h */,
+				497B6C5523E040FB00376B4D /* FileUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -112,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				49828DA323DAE36C003EA345 /* adhese_ad_wrapper.html */,
+				497B6C5223E03F7900376B4D /* adhese_size_reporter.js */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -208,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4999DB7523C5D8B50048F138 /* Adhese.h in Headers */,
+				497B6C5623E040FB00376B4D /* FileUtils.h in Headers */,
 				4999DB6D23C5CD460048F138 /* AdheseSDK.h in Headers */,
 				49621A2923C8AD6B00A3CBCE /* AdheseAPIResponse.h in Headers */,
 				49621A3223CCADB400A3CBCE /* JSONUtils.h in Headers */,
@@ -286,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				497B6C5323E03F7900376B4D /* adhese_size_reporter.js in Resources */,
 				49828DA423DAE36C003EA345 /* adhese_ad_wrapper.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +316,7 @@
 				49621A3323CCADB400A3CBCE /* JSONUtils.m in Sources */,
 				4999DB7623C5D8B50048F138 /* Adhese.m in Sources */,
 				4999DB7F23C6067C0048F138 /* AdheseOptions.m in Sources */,
+				497B6C5723E040FB00376B4D /* FileUtils.m in Sources */,
 				4999DB9223C71C240048F138 /* Ad.m in Sources */,
 				4999DB9B23C73DA60048F138 /* APIManager.m in Sources */,
 				4999DB7B23C5E10A0048F138 /* AdheseLogger.m in Sources */,

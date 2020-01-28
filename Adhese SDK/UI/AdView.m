@@ -15,11 +15,12 @@
 @implementation AdView
 
 #pragma mark - Init
-
 BOOL isContentLoaded;
 BOOL hasViewImpressionBeenCalled;
 BOOL isViewImpressionCallInProgress;
 BOOL isViewCurrentlyVisible;
+CGFloat actualWidth;
+CGFloat actualHeight;
 
 -(instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithFrame:CGRectZero configuration:[[WKWebViewConfiguration alloc] init]];
@@ -56,6 +57,7 @@ BOOL isViewCurrentlyVisible;
     self.opaque = NO;
     self.backgroundColor = [UIColor clearColor];
     self.shouldOpenAd = YES;
+    [self addObserver:self forKeyPath:@"bounds" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 #pragma mark - Getters/Setters
@@ -70,27 +72,45 @@ BOOL isViewCurrentlyVisible;
 
 -(void)loadAd {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+        [self loadContentWithActualBounds];
+    }];
+}
+
+
+-(void)loadContentWithActualBounds {
+    [self evaluateJavaScript:[Adhese getSizeReporterScript] completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        
+        if (error) {
+            // TODO: log and return
+            return;
+        }
+        
+        NSDictionary *rect = (NSDictionary *) result;
+        actualWidth = [[rect valueForKey:@"width"] floatValue];
+        actualHeight = [[rect valueForKey:@"height"] floatValue];
+        
         [self loadHTMLString:[self wrapinHtmlWrapper] baseURL:nil];
     }];
 }
 
 -(NSString *)wrapinHtmlWrapper {
-    double scale = [self determineContentScale];
-    double height = self.ad ? self.ad.height * scale : self.frame.size.height;
-    double width = self.ad ? self.ad.width * scale : self.frame.size.width;
+    float scale = [self determineContentScale];
     
-    return [NSString stringWithFormat:[Adhese getHtmlWrapper], scale, scale, width, height, self.ad.content];
+    NSLog(@"%@//prefered: %ldx%ld", self.ad.adType, self.ad.width, self.ad.height);
+    NSLog(@"%@//actual: %ldx%ld", self.ad.adType, (long) actualWidth, (long) actualHeight);
+    NSLog(@"%@//scale: %f", self.ad.adType, scale);
+    
+    return [NSString stringWithFormat:[Adhese getHtmlWrapper], self.ad.adType, scale, scale, actualWidth, actualHeight, self.ad.content];
 }
 
--(double)determineContentScale {
-    return 1;
-//    if (!self.ad) { return 1; }
-//
-//    if (self.ad.width < self.frame.size.height) {
-//        return self.frame.size.height / self.ad.height;
-//    } else {
-//        return self.frame.size.width / self.ad.width;
-//    }
+-(CGFloat)determineContentScale {
+    if (!self.ad) { return 1; }
+    
+    if (self.ad.width < actualHeight) {
+        return self.ad.height != 0 ? actualHeight / self.ad.height : 1;
+    } else {
+        return self.ad.width != 0 ? actualWidth / self.ad.width : 1;
+    }
 }
 
 -(void)notifyTracker {
