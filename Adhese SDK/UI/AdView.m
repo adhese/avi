@@ -13,14 +13,17 @@
 #import "Adhese.h"
 
 @implementation AdView
+{
+    BOOL isContentLoaded;
+    BOOL hasViewImpressionBeenCalled;
+    BOOL isViewImpressionCallInProgress;
+    BOOL isViewCurrentlyVisible;
+    CGFloat actualWidth;
+    CGFloat actualHeight;
+}
 
 #pragma mark - Init
-BOOL isContentLoaded;
-BOOL hasViewImpressionBeenCalled;
-BOOL isViewImpressionCallInProgress;
-BOOL isViewCurrentlyVisible;
-CGFloat actualWidth;
-CGFloat actualHeight;
+
 
 -(instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithFrame:CGRectZero configuration:[[WKWebViewConfiguration alloc] init]];
@@ -57,7 +60,6 @@ CGFloat actualHeight;
     self.opaque = NO;
     self.backgroundColor = [UIColor clearColor];
     self.shouldOpenAd = YES;
-    [self addObserver:self forKeyPath:@"bounds" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 #pragma mark - Getters/Setters
@@ -76,7 +78,6 @@ CGFloat actualHeight;
     }];
 }
 
-
 -(void)loadContentWithActualBounds {
     [self evaluateJavaScript:[Adhese getSizeReporterScript] completionHandler:^(id _Nullable result, NSError * _Nullable error) {
         
@@ -86,8 +87,8 @@ CGFloat actualHeight;
         }
         
         NSDictionary *rect = (NSDictionary *) result;
-        actualWidth = [[rect valueForKey:@"width"] floatValue];
-        actualHeight = [[rect valueForKey:@"height"] floatValue];
+        self->actualWidth = [[rect valueForKey:@"width"] floatValue];
+        self->actualHeight = [[rect valueForKey:@"height"] floatValue];
         
         [self loadHTMLString:[self wrapinHtmlWrapper] baseURL:nil];
     }];
@@ -95,10 +96,6 @@ CGFloat actualHeight;
 
 -(NSString *)wrapinHtmlWrapper {
     float scale = [self determineContentScale];
-    
-    NSLog(@"%@//prefered: %ldx%ld", self.ad.adType, self.ad.width, self.ad.height);
-    NSLog(@"%@//actual: %ldx%ld", self.ad.adType, (long) actualWidth, (long) actualHeight);
-    NSLog(@"%@//scale: %f", self.ad.adType, scale);
     
     return [NSString stringWithFormat:[Adhese getHtmlWrapper], self.ad.adType, scale, scale, actualWidth, actualHeight, self.ad.content];
 }
