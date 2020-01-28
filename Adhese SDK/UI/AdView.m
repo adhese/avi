@@ -81,7 +81,7 @@ CGFloat actualHeight;
     [self evaluateJavaScript:[Adhese getSizeReporterScript] completionHandler:^(id _Nullable result, NSError * _Nullable error) {
         
         if (error) {
-            // TODO: log and return
+            [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Couldn't determine AdView width/height. Ad won't load: %@", error.localizedDescription]];
             return;
         }
         
