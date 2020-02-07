@@ -35,6 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id <AdViewDelegate> delegate;
 @property (nonatomic, assign) BOOL shouldOpenAd;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

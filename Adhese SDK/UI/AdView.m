@@ -11,6 +11,7 @@
 #import "AdheseLogger.h"
 #import "APIManager.h"
 #import "Adhese.h"
+#import "ViewUtils.h"
 
 @implementation AdView
 {
@@ -152,7 +153,7 @@
         && self.ad.viewableImpressionUrl
         && self.ad.viewableImpressionUrl.length > 0
         && !self.isHidden
-        && isViewCurrentlyVisible) {
+        && [ViewUtils isVisible:self]) {
             [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"%@ is visible", self.ad.slotName]];
             [self notifyViewImpression];
     }
@@ -191,14 +192,6 @@
     }
 
     decisionHandler(WKNavigationActionPolicyAllow);
-}
-
-#pragma mark - Overrides
-
-- (void)didMoveToWindow {
-    [super didMoveToWindow];
-    
-    isViewCurrentlyVisible = self.window != nil;
 }
 
 @end
