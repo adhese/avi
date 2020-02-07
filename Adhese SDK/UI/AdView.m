@@ -21,6 +21,7 @@
     BOOL isViewCurrentlyVisible;
     CGFloat actualWidth;
     CGFloat actualHeight;
+    NSTimer *periodicVisibilityAssertionTimer;
 }
 
 #pragma mark - Init
@@ -68,6 +69,7 @@
 -(void)setAd:(Ad *)ad {
     _ad = ad;
     isContentLoaded = NO;
+    periodicVisibilityAssertionTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(viewVisibilityTick) userInfo:nil repeats:YES];
     [self loadAd];
 }
 
@@ -142,6 +144,9 @@
         
         [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Notified tracker for slot %@", self.ad.slotName]];
         
+        self->hasViewImpressionBeenCalled = YES;
+        [self->periodicVisibilityAssertionTimer invalidate];
+        
         [self.delegate viewImpressionWasNotified:self  withError:nil];
     }];
 }
@@ -192,6 +197,12 @@
     }
 
     decisionHandler(WKNavigationActionPolicyAllow);
+}
+
+#pragma mark - View Visibility Tick
+-(void)viewVisibilityTick {
+    [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Checking if slot %@ is visible.", self.ad.slotName]];
+    [self triggerViewImpressionWhenVisible];
 }
 
 @end
