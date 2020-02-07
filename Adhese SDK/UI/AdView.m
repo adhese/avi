@@ -185,7 +185,7 @@
 
     BOOL isClickEvent = navigationAction.navigationType == WKNavigationTypeLinkActivated;
     if (self.shouldOpenAd && [navigationAction.request.URL.absoluteString hasPrefix:@"http"] && isClickEvent) {
-        [[UIApplication sharedApplication] openURL:navigationAction.request.URL options:@{} completionHandler:nil];
+        [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
         decisionHandler(WKNavigationActionPolicyAllow);
         return;
     }
