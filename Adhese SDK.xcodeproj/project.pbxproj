@@ -41,6 +41,8 @@
 		49C7F1DF23CEF52100205C19 /* AdheseError.h in Headers */ = {isa = PBXBuildFile; fileRef = 49C7F1DD23CEF52100205C19 /* AdheseError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49C7F1E023CEF52100205C19 /* AdheseError.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C7F1DE23CEF52100205C19 /* AdheseError.m */; };
 		49C7F1E223CEF56400205C19 /* AdheseErrorCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 49C7F1E123CEF56400205C19 /* AdheseErrorCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49E3B1AF23ED67A000C3657D /* ViewUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 49E3B1AD23ED67A000C3657D /* ViewUtils.h */; };
+		49E3B1B023ED67A000C3657D /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E3B1AE23ED67A000C3657D /* ViewUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		49C7F1DD23CEF52100205C19 /* AdheseError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseError.h; sourceTree = "<group>"; };
 		49C7F1DE23CEF52100205C19 /* AdheseError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdheseError.m; sourceTree = "<group>"; };
 		49C7F1E123CEF56400205C19 /* AdheseErrorCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseErrorCode.h; sourceTree = "<group>"; };
+		49E3B1AD23ED67A000C3657D /* ViewUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewUtils.h; sourceTree = "<group>"; };
+		49E3B1AE23ED67A000C3657D /* ViewUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				49621A3123CCADB400A3CBCE /* JSONUtils.m */,
 				497B6C5423E040FB00376B4D /* FileUtils.h */,
 				497B6C5523E040FB00376B4D /* FileUtils.m */,
+				49E3B1AD23ED67A000C3657D /* ViewUtils.h */,
+				49E3B1AE23ED67A000C3657D /* ViewUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -217,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4999DB7523C5D8B50048F138 /* Adhese.h in Headers */,
+				49E3B1AF23ED67A000C3657D /* ViewUtils.h in Headers */,
 				497B6C5623E040FB00376B4D /* FileUtils.h in Headers */,
 				4999DB6D23C5CD460048F138 /* AdheseSDK.h in Headers */,
 				49621A2923C8AD6B00A3CBCE /* AdheseAPIResponse.h in Headers */,
@@ -318,6 +325,7 @@
 				4999DB7F23C6067C0048F138 /* AdheseOptions.m in Sources */,
 				497B6C5723E040FB00376B4D /* FileUtils.m in Sources */,
 				4999DB9223C71C240048F138 /* Ad.m in Sources */,
+				49E3B1B023ED67A000C3657D /* ViewUtils.m in Sources */,
 				4999DB9B23C73DA60048F138 /* APIManager.m in Sources */,
 				4999DB7B23C5E10A0048F138 /* AdheseLogger.m in Sources */,
 				4999DB8423C609C40048F138 /* Device.m in Sources */,
