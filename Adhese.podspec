@@ -109,7 +109,7 @@ Pod::Spec.new do |spec|
 
   # spec.resource  = "icon.png"
   # spec.resources = "Resources/*.png"
-    spec.resources = "Adhese SDK/Assets/*.js", "Assets/*.html"
+    spec.resources = "Adhese SDK/Assets/*.js", "Adhese SDK/Assets/*.html"
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
