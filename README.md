@@ -2,6 +2,13 @@
 ## Introduction
 This is the Adhese SDK for native iOS. The SDK enables you to load ad data from the Adhese API and to display them with a native view.
 
+## Adding the SDK
+
+The SDK is available via Cocopods. Add the following to your `Podfile` and run `pod install`
+
+    pod 'Adhese', '~> 1.0.1'
+
+
 ## Code example
 Initialise the SDK once for the application. This should be called in your AppDelegate class. Preferably in the `willFinishLaunchingWithOptions` method, otherwise errors might occur because the SDK could be called before it was properly initialised.
 
