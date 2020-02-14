@@ -38,7 +38,6 @@
 		496219FB23C8616000A3CBCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49621A0023C8616000A3CBCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49621A0123C8616000A3CBCE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		49621A0923C87ED300A3CBCE /* Adhese_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Adhese_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49621A0D23C87F7900A3CBCE /* AdheseSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AdheseSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49621A1D23C88C0100A3CBCE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49621A1F23C88F7600A3CBCE /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -92,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				49621A0D23C87F7900A3CBCE /* AdheseSDK.framework */,
-				49621A0923C87ED300A3CBCE /* Adhese_SDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

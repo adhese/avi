@@ -41,6 +41,8 @@
 		49C7F1DF23CEF52100205C19 /* AdheseError.h in Headers */ = {isa = PBXBuildFile; fileRef = 49C7F1DD23CEF52100205C19 /* AdheseError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49C7F1E023CEF52100205C19 /* AdheseError.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C7F1DE23CEF52100205C19 /* AdheseError.m */; };
 		49C7F1E223CEF56400205C19 /* AdheseErrorCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 49C7F1E123CEF56400205C19 /* AdheseErrorCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49D9099723F6826E003D210B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 49D9099623F6826E003D210B /* LICENSE */; };
+		49D9099B23F689F3003D210B /* Adhese.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 49D9099A23F689F3003D210B /* Adhese.podspec */; };
 		49E3B1AF23ED67A000C3657D /* ViewUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 49E3B1AD23ED67A000C3657D /* ViewUtils.h */; };
 		49E3B1B023ED67A000C3657D /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E3B1AE23ED67A000C3657D /* ViewUtils.m */; };
 /* End PBXBuildFile section */
@@ -83,6 +85,8 @@
 		49C7F1DD23CEF52100205C19 /* AdheseError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseError.h; sourceTree = "<group>"; };
 		49C7F1DE23CEF52100205C19 /* AdheseError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdheseError.m; sourceTree = "<group>"; };
 		49C7F1E123CEF56400205C19 /* AdheseErrorCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdheseErrorCode.h; sourceTree = "<group>"; };
+		49D9099623F6826E003D210B /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		49D9099A23F689F3003D210B /* Adhese.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = Adhese.podspec; sourceTree = SOURCE_ROOT; };
 		49E3B1AD23ED67A000C3657D /* ViewUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewUtils.h; sourceTree = "<group>"; };
 		49E3B1AE23ED67A000C3657D /* ViewUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +161,7 @@
 				4999DB8023C609A70048F138 /* Parameters */,
 				49621A3423CD9CAE00A3CBCE /* UI */,
 				49621A2B23CC77D200A3CBCE /* Utils */,
+				49D9099A23F689F3003D210B /* Adhese.podspec */,
 				4999DB6B23C5CD460048F138 /* AdheseSDK.h */,
 				4999DB6C23C5CD460048F138 /* Info.plist */,
 				4999DB8F23C71C240048F138 /* Ad.h */,
@@ -166,6 +171,7 @@
 				4999DB7C23C6067C0048F138 /* AdheseOptions.h */,
 				4999DB7D23C6067C0048F138 /* AdheseOptions.m */,
 				49621A1123C8842500A3CBCE /* README.md */,
+				49D9099623F6826E003D210B /* LICENSE */,
 			);
 			path = "Adhese SDK";
 			sourceTree = "<group>";
@@ -303,6 +309,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D9099B23F689F3003D210B /* Adhese.podspec in Resources */,
+				49D9099723F6826E003D210B /* LICENSE in Resources */,
 				497B6C5323E03F7900376B4D /* adhese_size_reporter.js in Resources */,
 				49828DA423DAE36C003EA345 /* adhese_ad_wrapper.html in Resources */,
 			);
