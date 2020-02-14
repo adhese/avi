@@ -70,10 +70,12 @@ If you want to receive delegate events you can apply the `AdViewDelegate` to you
 Set `adView.shouldOpenAd = NO` to enable/disable automatic opening of the ad in the browser. The default value is true, so it will open automatically. However, when setting it to false and implementing the `adClicked` delegate you can implement custom behaviour.
 
 ## Publishing the SDK
-1. Change the version number in the `Adhese.podspec file` 
-2. Commit the changes to Github 
-3. Tag your commit with the same version as specified in the podspec file
-4. Execute `pod trunk push` via the terminal at the root folder of the project and follow the instructions
+1. Change the version number in the `Adhese.podspec` file
+2. Change the version number in the Adhese SDK target in xcode
+3. Change the version in the README.md for convenient copy/pasting
+4. Commit the changes to Github 
+5. Tag your commit with the same version as specified in the podspec file
+6. Execute `pod trunk push` via the terminal at the root folder of the project and follow the instructions
 
 ℹ️  For the whole process from start to finish (including initial publishing) see this [excellent blogpost](https://medium.com/flawless-app-stories/create-your-own-cocoapods-library-da589d5cd270).
 
