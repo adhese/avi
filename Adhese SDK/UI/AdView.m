@@ -120,13 +120,19 @@
         
         if (response.error) {
             [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Failed to notify the tracker for slot %@. %@", self.ad.slotName, response.error.description]];
-            [self.delegate trackerWasNotified:self withError:response.error];
+            
+            if ([self.delegate respondsToSelector:@selector(trackerWasNotified:withError:)]) {
+                [self.delegate trackerWasNotified:self withError:response.error];
+            }
+            
             return;
         }
         
         [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Notified tracker for slot  %@", self.ad.slotName]];
         
-        [self.delegate trackerWasNotified:self withError:nil];
+        if ([self.delegate respondsToSelector:@selector(trackerWasNotified:withError:)]) {
+            [self.delegate trackerWasNotified:self withError:nil];
+        }
     }];
 }
 
@@ -138,7 +144,11 @@
         
         if (response.error) {
             [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Failed to send view impression for slot %@. %@", self.ad.slotName, response.error.description]];
-            [self.delegate viewImpressionWasNotified:self withError:response.error];
+            
+            if ([self.delegate respondsToSelector:@selector(viewImpressionWasNotified:withError:)]) {
+                [self.delegate viewImpressionWasNotified:self withError:response.error];
+            }
+            
             return;
         }
         
@@ -147,7 +157,9 @@
         self->hasViewImpressionBeenCalled = YES;
         [self->periodicVisibilityAssertionTimer invalidate];
         
-        [self.delegate viewImpressionWasNotified:self  withError:nil];
+        if ([self.delegate respondsToSelector:@selector(viewImpressionWasNotified:withError:)]) {
+            [self.delegate viewImpressionWasNotified:self  withError:nil];
+        }
     }];
 }
 
@@ -174,7 +186,9 @@
     
     isContentLoaded = YES;
     
-    [self.delegate adDidLoad:self withError:nil];
+    if ([self.delegate respondsToSelector:@selector(adDidLoad:withError:)]) {
+        [self.delegate adDidLoad:self withError:nil];
+    }
     
     [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Finished loading slot %@", self.ad.slotName]];
 
