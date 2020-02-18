@@ -133,18 +133,35 @@ AdView *halfPageAdview;
 
 -(void)adDidLoad:(id)adView withError:(AdheseError * _Nullable)error {
     AdView *view = (AdView *) adView;
+    
+    if (error) {
+        [events addObject:[NSString stringWithFormat:@"%@ failed loading. Cause: %@", view.ad.slotName, error.message]];
+        return;
+    }
+    
     [events addObject:[NSString stringWithFormat:@"%@ did load.", view.ad.slotName]];
 }
 
 -(void)viewImpressionWasNotified:(id)adView withError:(AdheseError * _Nullable)error {
     AdView *view = (AdView *) adView;
+    
+    if (error) {
+        [events addObject:[NSString stringWithFormat:@"%@ view impression failed calling. Cause: %@", view.ad.slotName, error.message]];
+        return;
+    }
+    
     [events addObject:[NSString stringWithFormat:@"%@ view impression was called.", view.ad.slotName]];
 }
 
 -(void)trackerWasNotified:(id)adView withError:(AdheseError * _Nullable)error {
     AdView *view = (AdView *) adView;
+    
+    if (error) {
+        [events addObject:[NSString stringWithFormat:@"%@ tracker failed calling. Cause: %@", view.ad.slotName, error.message]];
+        return;
+    }
+    
     [events addObject:[NSString stringWithFormat:@"%@'s tracker was called.", view.ad.slotName]];
 }
-
 
 @end
