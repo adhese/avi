@@ -308,8 +308,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.endare.adhese.sdksample;
+				MARKETING_VERSION = 1.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.endare.adhesesdk.sampleapp;
 				PRODUCT_NAME = Adhese;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -327,8 +327,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.endare.adhese.sdksample;
+				MARKETING_VERSION = 1.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.endare.adhesesdk.sampleapp;
 				PRODUCT_NAME = Adhese;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
