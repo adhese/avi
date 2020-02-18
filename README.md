@@ -6,7 +6,7 @@ This is the Adhese SDK for native iOS. The SDK enables you to load ad data from 
 
 The SDK is available via Cocopods. Add the following to your `Podfile` and run `pod install`
 
-    pod 'Adhese', '~> 1.0.1'
+    pod 'Adhese', '~> 1.0.2'
 
 
 ## Code example
