@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FileUtils : NSObject
 
 +(NSString *)loadSDKFileWithName:(NSString *)filename;
++(NSString *)loadSDKFileWithName:(NSString *)filename forPath:(NSString *)path;
++(BOOL)doesDirectoryExist:(NSString *)path;
 
 @end
 
