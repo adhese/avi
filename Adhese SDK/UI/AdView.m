@@ -134,7 +134,7 @@
     isViewImpressionCallInProgress = YES;
     [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Will notify the view impression for slot %@", self.ad.slotName]];
 
-    [[[APIManager alloc] initWithBaseUrl:nil] getForUrl:self.ad.trackerUrl withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
+    [[[APIManager alloc] initWithBaseUrl:nil] getForUrl:self.ad.viewableImpressionUrl withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
         
         if (response.error) {
             [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Failed to send view impression for slot %@. %@", self.ad.slotName, response.error.description]];
