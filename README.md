@@ -41,6 +41,38 @@ In the `viewDidLayoutSubviews` initialise the `AdView`. Set the frame and add it
     halfPageAdview = [[AdView alloc] initWithFrame:self.halfPageContainerView.bounds];
     [self.halfPageContainerView addSubview:halfPageAdview];
 
+#### Load Ad
+
+    #import <AdheseSDK/Adhese.h>
+    #import <AdheseSDK/CookieMode.h>
+
+    AdheseOptions *options = [[AdheseOptions alloc] initWithLocation:@"_demo_ster_a_"];
+    options.cookieMode = kAll;
+    options.slots = @[@"billboard", @"halfpage"];
+
+    [Adhese loadAds:options withCompletionHandler:^(NSArray<Ad *> * _Nonnull ads, AdheseError * _Nullable error) {
+
+        if (error) {
+            NSLog(@"Failed loading ads with errors: %@", error.description);
+            return;
+        }
+
+        Ad *billboard = [self findAd:ads byType:@"billboard"];
+        Ad *halfPage = [self findAd:ads byType:@"halfpage"];
+
+        if (billboard) {
+            [self.billboardAdview setAd:billboard];
+        } else {
+            [self.billboardAdview setHidden:YES];
+        }
+
+        if (halfPage) {
+            [self.halfpageAdView setAd:halfPage];
+        } else {
+            [self.halfpageAdView setHidden:YES];
+        }
+    }];
+
 ### Swift
 
 #### Bridging header
@@ -116,7 +148,7 @@ The SDK is now ready to fetch ad data. Here's an example on how to fetch ad data
         adView2.ad = halfpage
         self.adContainerView.addSubview(adView2)
     }
-    
+
 ### Delegate events
 
 If you want to receive delegate events you can apply the `AdViewDelegate` to your ViewController. The following optional delegate methods can be implemented.
