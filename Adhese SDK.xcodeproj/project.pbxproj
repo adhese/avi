@@ -13,8 +13,6 @@
 		49621A2F23CC77E400A3CBCE /* DeviceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 49621A2D23CC77E400A3CBCE /* DeviceUtils.m */; };
 		49621A3223CCADB400A3CBCE /* JSONUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 49621A3023CCADB400A3CBCE /* JSONUtils.h */; };
 		49621A3323CCADB400A3CBCE /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 49621A3123CCADB400A3CBCE /* JSONUtils.m */; };
-		49621A3723CD9CD700A3CBCE /* AdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 49621A3523CD9CD700A3CBCE /* AdView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		49621A3823CD9CD700A3CBCE /* AdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49621A3623CD9CD700A3CBCE /* AdView.m */; };
 		497B6C5323E03F7900376B4D /* adhese_size_reporter.js in Resources */ = {isa = PBXBuildFile; fileRef = 497B6C5223E03F7900376B4D /* adhese_size_reporter.js */; };
 		497B6C5623E040FB00376B4D /* FileUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 497B6C5423E040FB00376B4D /* FileUtils.h */; };
 		497B6C5723E040FB00376B4D /* FileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B6C5523E040FB00376B4D /* FileUtils.m */; };
@@ -45,6 +43,9 @@
 		49D9099B23F689F3003D210B /* Adhese.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 49D9099A23F689F3003D210B /* Adhese.podspec */; };
 		49E3B1AF23ED67A000C3657D /* ViewUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 49E3B1AD23ED67A000C3657D /* ViewUtils.h */; };
 		49E3B1B023ED67A000C3657D /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E3B1AE23ED67A000C3657D /* ViewUtils.m */; };
+		C7421DCC23FEFF730010A7C6 /* AdView.h in Headers */ = {isa = PBXBuildFile; fileRef = C7421DCA23FEFF730010A7C6 /* AdView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C7421DCD23FEFF730010A7C6 /* AdView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7421DCB23FEFF730010A7C6 /* AdView.m */; };
+		C7421DCF23FEFFF00010A7C6 /* AdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7421DCE23FEFFF00010A7C6 /* AdView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +56,6 @@
 		49621A2D23CC77E400A3CBCE /* DeviceUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceUtils.m; sourceTree = "<group>"; };
 		49621A3023CCADB400A3CBCE /* JSONUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
 		49621A3123CCADB400A3CBCE /* JSONUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
-		49621A3523CD9CD700A3CBCE /* AdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdView.h; sourceTree = "<group>"; };
-		49621A3623CD9CD700A3CBCE /* AdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdView.m; sourceTree = "<group>"; };
 		497B6C5223E03F7900376B4D /* adhese_size_reporter.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = adhese_size_reporter.js; sourceTree = "<group>"; };
 		497B6C5423E040FB00376B4D /* FileUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
 		497B6C5523E040FB00376B4D /* FileUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileUtils.m; sourceTree = "<group>"; };
@@ -89,6 +88,9 @@
 		49D9099A23F689F3003D210B /* Adhese.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Adhese.podspec; sourceTree = SOURCE_ROOT; };
 		49E3B1AD23ED67A000C3657D /* ViewUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewUtils.h; sourceTree = "<group>"; };
 		49E3B1AE23ED67A000C3657D /* ViewUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewUtils.m; sourceTree = "<group>"; };
+		C7421DCA23FEFF730010A7C6 /* AdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdView.h; sourceTree = "<group>"; };
+		C7421DCB23FEFF730010A7C6 /* AdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdView.m; sourceTree = "<group>"; };
+		C7421DCE23FEFFF00010A7C6 /* AdView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +122,9 @@
 		49621A3423CD9CAE00A3CBCE /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				49621A3523CD9CD700A3CBCE /* AdView.h */,
-				49621A3623CD9CD700A3CBCE /* AdView.m */,
+				C7421DCA23FEFF730010A7C6 /* AdView.h */,
+				C7421DCB23FEFF730010A7C6 /* AdView.m */,
+				C7421DCE23FEFFF00010A7C6 /* AdView.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -240,12 +243,12 @@
 				4999DB8323C609C40048F138 /* Device.h in Headers */,
 				4999DB8E23C7163A0048F138 /* AdheseParameter.h in Headers */,
 				4999DB8C23C70B5F0048F138 /* DeviceType.h in Headers */,
+				C7421DCC23FEFF730010A7C6 /* AdView.h in Headers */,
 				4999DB7E23C6067C0048F138 /* AdheseOptions.h in Headers */,
 				4999DB9A23C73DA60048F138 /* APIManager.h in Headers */,
 				4999DB9623C73D1B0048F138 /* AdheseAPI.h in Headers */,
 				4999DB9123C71C240048F138 /* Ad.h in Headers */,
 				4999DB8723C609D80048F138 /* CookieMode.h in Headers */,
-				49621A3723CD9CD700A3CBCE /* AdView.h in Headers */,
 				4999DB8A23C60A5D0048F138 /* URLParameter.h in Headers */,
 				49C7F1DF23CEF52100205C19 /* AdheseError.h in Headers */,
 			);
@@ -283,6 +286,7 @@
 				TargetAttributes = {
 					4999DB6723C5CD460048F138 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -309,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7421DCF23FEFFF00010A7C6 /* AdView.xib in Resources */,
 				49D9099B23F689F3003D210B /* Adhese.podspec in Resources */,
 				49D9099723F6826E003D210B /* LICENSE in Resources */,
 				497B6C5323E03F7900376B4D /* adhese_size_reporter.js in Resources */,
@@ -325,10 +330,10 @@
 			files = (
 				49C7F1E023CEF52100205C19 /* AdheseError.m in Sources */,
 				4999DB9723C73D1B0048F138 /* AdheseAPI.m in Sources */,
-				49621A3823CD9CD700A3CBCE /* AdView.m in Sources */,
 				49621A2A23C8AD6B00A3CBCE /* AdheseAPIResponse.m in Sources */,
 				49621A2F23CC77E400A3CBCE /* DeviceUtils.m in Sources */,
 				49621A3323CCADB400A3CBCE /* JSONUtils.m in Sources */,
+				C7421DCD23FEFF730010A7C6 /* AdView.m in Sources */,
 				4999DB7623C5D8B50048F138 /* Adhese.m in Sources */,
 				4999DB7F23C6067C0048F138 /* AdheseOptions.m in Sources */,
 				497B6C5723E040FB00376B4D /* FileUtils.m in Sources */,
@@ -462,6 +467,7 @@
 		4999DB7123C5CD460048F138 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = LL8E8RN35L;
@@ -479,6 +485,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.endare.adhese.sdk;
 				PRODUCT_NAME = AdheseSDK;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -486,6 +494,7 @@
 		4999DB7223C5CD460048F138 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = LL8E8RN35L;
@@ -503,6 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.endare.adhese.sdk;
 				PRODUCT_NAME = AdheseSDK;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

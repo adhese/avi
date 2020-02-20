@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
-                <outlet property="billboardContainerView" destination="UAf-tF-tuK" id="jYK-jL-LYT"/>
+                <outlet property="billboardAdview" destination="5Iw-ok-1hF" id="PEB-XW-RSn"/>
                 <outlet property="halfPageContainerView" destination="GvU-BK-rfG" id="w6r-1C-3a8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,19 +26,10 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNS-Kh-1UY">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="2377"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Iw-ok-1hF" userLabel="Billboard container">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Iw-ok-1hF" userLabel="Billboard container" customClass="AdView">
                                     <rect key="frame" x="20" y="20" width="374" height="120"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAf-tF-tuK">
-                                            <rect key="frame" x="8" y="8" width="358" height="104"/>
-                                        </stackView>
-                                    </subviews>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="120" id="8zu-iX-JQK"/>
-                                        <constraint firstItem="UAf-tF-tuK" firstAttribute="top" secondItem="5Iw-ok-1hF" secondAttribute="topMargin" id="BOP-d6-Vvf"/>
-                                        <constraint firstItem="UAf-tF-tuK" firstAttribute="leading" secondItem="5Iw-ok-1hF" secondAttribute="leadingMargin" id="Cp8-9W-yHG"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="UAf-tF-tuK" secondAttribute="trailing" id="cDV-Hd-Y5r"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="UAf-tF-tuK" secondAttribute="bottom" id="tts-hd-DWS"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45N-nG-XiK">

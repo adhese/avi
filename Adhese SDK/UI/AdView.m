@@ -13,6 +13,7 @@
 #import "Adhese.h"
 #import "ViewUtils.h"
 
+
 @implementation AdView
 {
     BOOL isContentLoaded;
@@ -22,13 +23,16 @@
     CGFloat actualWidth;
     CGFloat actualHeight;
     NSTimer *periodicVisibilityAssertionTimer;
+    
+    WKWebView *webView;
 }
+
 
 #pragma mark - Init
 
 
 -(instancetype)initWithCoder:(NSCoder *)coder {
-    self = [super initWithFrame:CGRectZero configuration:[[WKWebViewConfiguration alloc] init]];
+    self = [super initWithCoder:coder];
     
     if (self) {
         [self bootstrap];
@@ -38,17 +42,7 @@
 }
 
 -(instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame configuration:[[WKWebViewConfiguration alloc] init]];
-    
-    if (self) {
-        [self bootstrap];
-    }
-    
-    return self;
-}
-
--(instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration {
-    self = [super initWithFrame:frame configuration:configuration];
+    self = [super initWithFrame:frame];
     
     if (self) {
         [self bootstrap];
@@ -58,9 +52,12 @@
 }
 
 -(void)bootstrap {
-    self.navigationDelegate = self;
-    self.opaque = NO;
-    self.backgroundColor = [UIColor clearColor];
+    webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) configuration:[WKWebViewConfiguration new]];
+    webView.navigationDelegate = self;
+    webView.opaque = NO;
+    webView.backgroundColor = [UIColor clearColor];
+    
+    [self addSubview:webView];
     self.shouldOpenAd = YES;
 }
 
@@ -82,7 +79,8 @@
 }
 
 -(void)loadContentWithActualBounds {
-    [self evaluateJavaScript:[Adhese getSizeReporterScript] completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+    __weak AdView *wSelf = self;
+    [webView evaluateJavaScript:[Adhese getSizeReporterScript] completionHandler:^(id _Nullable result, NSError * _Nullable error) {
         
         if (error) {
             [AdheseLogger logEvent:SDK_ERROR withMessage:[NSString stringWithFormat:@"Couldn't determine AdView width/height. Ad won't load: %@", error.localizedDescription]];
@@ -93,7 +91,7 @@
         self->actualWidth = [[rect valueForKey:@"width"] floatValue];
         self->actualHeight = [[rect valueForKey:@"height"] floatValue];
         
-        [self loadHTMLString:[self wrapinHtmlWrapper] baseURL:nil];
+        [self->webView loadHTMLString:[wSelf wrapinHtmlWrapper] baseURL:nil];
     }];
 }
 
@@ -218,5 +216,6 @@
     [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Checking if slot %@ is visible.", self.ad.slotName]];
     [self triggerViewImpressionWhenVisible];
 }
+
 
 @end

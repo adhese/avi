@@ -17,7 +17,6 @@
 @implementation MainViewController
 
 NSMutableArray<NSString *> *events;
-AdView *billboardAdview;
 AdView *halfPageAdview;
 
 #pragma mark - Initialisation
@@ -32,10 +31,7 @@ AdView *halfPageAdview;
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
-    billboardAdview = [[AdView alloc] initWithFrame:self.billboardContainerView.bounds];
-    [self.billboardContainerView addSubview:billboardAdview];
-    
+        
     halfPageAdview = [[AdView alloc] initWithFrame:self.halfPageContainerView.bounds];
     [self.halfPageContainerView addSubview:halfPageAdview];
     
@@ -57,7 +53,7 @@ AdView *halfPageAdview;
 }
 
 -(void)setDelegates {
-    [billboardAdview setDelegate:self];
+    [self.billboardAdview setDelegate:self];
     [halfPageAdview setDelegate:self];
 }
 
@@ -78,9 +74,9 @@ AdView *halfPageAdview;
         Ad *halfPage = [self findAd:ads byType:@"halfpage"];
 
         if (billboard) {
-            [billboardAdview setAd:billboard];
+            [self.billboardAdview setAd:billboard];
         } else {
-            [billboardAdview setHidden:YES];
+            [self.billboardAdview setHidden:YES];
         }
 
         if (halfPage) {
