@@ -6,7 +6,7 @@
 //  Copyright © 2020 Axel Jonckheere. All rights reserved.
 //
 
-#import <Webkit/WKWebView.h>
+#import <UIKit/UIKit.h>
 #import <Webkit/WKNavigationDelegate.h>
 #import "Ad.h"
 #import "AdheseError.h"
@@ -29,12 +29,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface AdView : WKWebView <WKNavigationDelegate>
-
+IB_DESIGNABLE
+@interface AdView : UIView<WKNavigationDelegate>
 @property (nonatomic, strong) Ad* ad;
 @property (nonatomic, weak) id <AdViewDelegate> delegate;
 @property (nonatomic, assign) BOOL shouldOpenAd;
-
 
 @end
 

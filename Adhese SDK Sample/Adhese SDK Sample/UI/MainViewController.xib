@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
-                <outlet property="billboardContainerView" destination="UAf-tF-tuK" id="jYK-jL-LYT"/>
+                <outlet property="billboardAdview" destination="5Iw-ok-1hF" id="PEB-XW-RSn"/>
                 <outlet property="halfPageContainerView" destination="GvU-BK-rfG" id="w6r-1C-3a8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,19 +26,10 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNS-Kh-1UY">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="2377"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Iw-ok-1hF" userLabel="Billboard container">
-                                    <rect key="frame" x="20" y="20" width="374" height="120"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAf-tF-tuK">
-                                            <rect key="frame" x="8" y="8" width="358" height="104"/>
-                                        </stackView>
-                                    </subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Iw-ok-1hF" userLabel="Billboard container" customClass="AdView">
+                                    <rect key="frame" x="20" y="20" width="375" height="100"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="120" id="8zu-iX-JQK"/>
-                                        <constraint firstItem="UAf-tF-tuK" firstAttribute="top" secondItem="5Iw-ok-1hF" secondAttribute="topMargin" id="BOP-d6-Vvf"/>
-                                        <constraint firstItem="UAf-tF-tuK" firstAttribute="leading" secondItem="5Iw-ok-1hF" secondAttribute="leadingMargin" id="Cp8-9W-yHG"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="UAf-tF-tuK" secondAttribute="trailing" id="cDV-Hd-Y5r"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="UAf-tF-tuK" secondAttribute="bottom" id="tts-hd-DWS"/>
+                                        <constraint firstAttribute="height" constant="100" id="8zu-iX-JQK"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45N-nG-XiK">
@@ -105,7 +96,7 @@ Nullam purus lorem, fringilla nec elementum quis, accumsan vitae turpis. Praesen
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="tZg-aZ-liV" firstAttribute="centerX" secondItem="cNS-Kh-1UY" secondAttribute="centerX" id="2YT-m2-jCD"/>
-                                <constraint firstItem="45N-nG-XiK" firstAttribute="top" secondItem="5Iw-ok-1hF" secondAttribute="bottom" constant="20" id="5WX-Jl-ENH"/>
+                                <constraint firstItem="45N-nG-XiK" firstAttribute="top" secondItem="5Iw-ok-1hF" secondAttribute="bottom" constant="40" id="5WX-Jl-ENH"/>
                                 <constraint firstItem="XGM-ZD-Hy6" firstAttribute="top" secondItem="tZg-aZ-liV" secondAttribute="bottom" constant="20" id="AIu-As-mDq"/>
                                 <constraint firstAttribute="trailing" secondItem="XGM-ZD-Hy6" secondAttribute="trailing" constant="20" id="E4O-6X-eyl"/>
                                 <constraint firstAttribute="trailing" secondItem="45N-nG-XiK" secondAttribute="trailing" constant="20" id="G7Y-Wy-xQy"/>
@@ -113,7 +104,7 @@ Nullam purus lorem, fringilla nec elementum quis, accumsan vitae turpis. Praesen
                                 <constraint firstItem="5Iw-ok-1hF" firstAttribute="top" secondItem="cNS-Kh-1UY" secondAttribute="top" constant="20" id="L31-Ta-znT"/>
                                 <constraint firstItem="45N-nG-XiK" firstAttribute="leading" secondItem="cNS-Kh-1UY" secondAttribute="leading" constant="20" id="UZw-a2-DGq"/>
                                 <constraint firstAttribute="bottom" secondItem="XGM-ZD-Hy6" secondAttribute="bottom" constant="20" id="eYq-SP-2Y0"/>
-                                <constraint firstAttribute="trailing" secondItem="5Iw-ok-1hF" secondAttribute="trailing" constant="20" id="mpK-ua-WJk"/>
+                                <constraint firstAttribute="trailing" secondItem="5Iw-ok-1hF" secondAttribute="trailing" constant="19" id="mpK-ua-WJk"/>
                                 <constraint firstItem="XGM-ZD-Hy6" firstAttribute="leading" secondItem="cNS-Kh-1UY" secondAttribute="leading" constant="20" id="swn-Wb-ZCo"/>
                                 <constraint firstItem="5Iw-ok-1hF" firstAttribute="leading" secondItem="cNS-Kh-1UY" secondAttribute="leading" constant="20" id="vGE-md-Z13"/>
                             </constraints>
