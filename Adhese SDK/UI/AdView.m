@@ -93,6 +93,7 @@
         self->actualHeight = [[rect valueForKey:@"height"] floatValue];
         
         [self->webView loadHTMLString:[wSelf wrapinHtmlWrapper] baseURL:nil];
+        self->webView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     }];
 }
 
