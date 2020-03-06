@@ -23,7 +23,7 @@
     CGFloat actualWidth;
     CGFloat actualHeight;
     NSTimer *periodicVisibilityAssertionTimer;
-    
+    NSTimeInterval visibilityAssertionInterval;
     WKWebView *webView;
 }
 
@@ -59,6 +59,7 @@
     
     [self addSubview:webView];
     self.shouldOpenAd = YES;
+    self->visibilityAssertionInterval = 1.0;
 }
 
 #pragma mark - Getters/Setters
@@ -66,7 +67,7 @@
 -(void)setAd:(Ad *)ad {
     _ad = ad;
     isContentLoaded = NO;
-    periodicVisibilityAssertionTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(viewVisibilityTick) userInfo:nil repeats:YES];
+    periodicVisibilityAssertionTimer = [NSTimer scheduledTimerWithTimeInterval:self->visibilityAssertionInterval target:self selector:@selector(viewVisibilityTick) userInfo:nil repeats:YES];
     [self loadAd];
 }
 
