@@ -114,6 +114,12 @@
 }
 
 -(void)notifyTracker {
+    
+    if (!self.ad.trackerUrl) {
+        [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Tried calling tracker for slot %@, but there is no tracker url available.", self.ad.slotName]];
+        return;
+    }
+    
     [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Will notify the tracker for slot %@", self.ad.slotName]];
     
     [[[APIManager alloc] initWithBaseUrl:nil] getForUrl:self.ad.trackerUrl withCompletionHandler:^(AdheseAPIResponse * _Nonnull response) {
@@ -137,6 +143,13 @@
 }
 
 -(void)notifyViewImpression {
+    
+    if (!self.ad.viewableImpressionUrl) {
+        [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Tried calling view impression for slot %@, but there is no viewable impression url available.", self.ad.slotName]];
+        self->hasViewImpressionBeenCalled = YES;
+        return;
+    }
+    
     isViewImpressionCallInProgress = YES;
     [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Will notify the view impression for slot %@", self.ad.slotName]];
 

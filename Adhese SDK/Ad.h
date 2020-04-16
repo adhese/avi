@@ -22,8 +22,8 @@ static NSString* kHeight = @"height";
 @interface Ad : NSObject
 
 @property (nonatomic, strong) NSString* content;
-@property (nonatomic, strong) NSString* viewableImpressionUrl;
-@property (nonatomic, strong) NSString* trackerUrl;
+@property (nonatomic, strong, nullable) NSString* viewableImpressionUrl;
+@property (nonatomic, strong, nullable) NSString* trackerUrl;
 @property (nonatomic, strong) NSString* adType;
 @property (nonatomic, strong) NSString* slotName;
 @property (nonatomic, assign) NSInteger width;

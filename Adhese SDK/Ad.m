@@ -8,6 +8,7 @@
 
 #import "Ad.h"
 #import "JSONUtils.h"
+#import "AdheseLogger.h"
 
 @implementation Ad
 
@@ -24,14 +25,6 @@
             [NSException raise:@"Parsing error" format:@"The payload contains neither a tag or body property."];
         }
         
-        if ([data objectForKey:kTracker]) {
-            self.trackerUrl = [data objectForKey:kTracker];
-        }
-        
-        if ([data objectForKey:kViewableImpressionUrl]) {
-            self.viewableImpressionUrl = [data objectForKey:kViewableImpressionUrl];
-        }
-        
         if ([data objectForKey:kAdType]) {
             self.adType = [data objectForKey:kAdType];
         }
@@ -46,6 +39,20 @@
         
         if ([data objectForKey:kHeight]) {
             self.height = [[data objectForKey:kHeight] integerValue];
+        }
+        
+        if ([data objectForKey:kTracker]) {
+            self.trackerUrl = [data objectForKey:kTracker];
+        } else {
+            self.trackerUrl = nil;
+            [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Ad with slot %@ loaded without a tracker url.", self.slotName]];
+        }
+        
+        if ([data objectForKey:kViewableImpressionUrl]) {
+            self.viewableImpressionUrl = [data objectForKey:kViewableImpressionUrl];
+        } else {
+            self.viewableImpressionUrl = nil;
+            [AdheseLogger logEvent:SDK_EVENT withMessage:[NSString stringWithFormat:@"Ad with slot %@ loaded without a viewable impression url.", self.slotName]];
         }
         
         self.raw = data;
