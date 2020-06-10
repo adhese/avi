@@ -1,24 +1,14 @@
 <html>
 <head>
     <title>Adhese Ad: %@</title>
-    <style>
-        iframe {
-            transform-origin: top left;
-            transform: scale(%f, %f);
-        }
-
-        html, body, iframe {
-            margin: 0px;
-            padding: 0px;
-        }
-
-        a, div, img {
-            width: %fpx;
-            height: %fpx;
-            margin: 0 auto;
-            display: block;
-        }
-    </style>
+    <script>
+        var config = {
+            sx: %f,
+            sy: %f,
+            width: %f,
+            height: %f
+        };
+    </script>
 </head>
 <body>
 %@

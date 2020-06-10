@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "Adhese"
-  spec.version      = "1.0.5"
+  spec.version      = "1.0.6"
   spec.summary      = "The official Adhese SDK for iOS."
 
   # This description is used to generate tags and improve search results.
