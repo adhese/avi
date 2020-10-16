@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString* location;
 @property (nonatomic, strong) NSArray<NSString *>* slots;
+@property (nonatomic, strong) NSDictionary<NSString *, NSArray<NSString *>*>* customParameters;
 @property (nonatomic, strong) NSString* cookieMode;
 @property (nonatomic, strong) Device* device;
 

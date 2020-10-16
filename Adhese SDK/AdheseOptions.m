@@ -26,6 +26,21 @@
         [result appendFormat:@"/%@%@-%@", kSlot, self.location, slot];
     }
     
+    for (NSString *key in self.customParameters) {
+        NSArray<NSString *>* values = self.customParameters[key];
+        NSMutableString *valueString = [NSMutableString alloc];
+
+        bool first = 1;
+        for (NSString* value in values) {
+            if (first) {
+                valueString = [valueString initWithString: value];
+                first = 0;
+            }
+            [valueString appendFormat:@"%@;%@", valueString, value];
+        }
+        [result appendFormat:@"/%@%@", key, valueString];
+    }
+    
     [result appendFormat:@"/%@%@", kCookieMode, self.cookieMode];
     
     if (self.device) {
