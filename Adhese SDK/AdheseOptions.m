@@ -26,6 +26,25 @@
         [result appendFormat:@"/%@%@-%@", kSlot, self.location, slot];
     }
     
+    NSArray<NSString *> *sortedKeys = [[self.customParameters allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    
+    for (NSString *key in sortedKeys) {
+        NSArray<NSString *>* values = self.customParameters[key];
+        NSMutableString *valueString = [NSMutableString alloc];
+
+        BOOL first = YES;
+        for (NSString* value in values) {
+            if (first) {
+                valueString = [valueString initWithString: value];
+                first = NO;
+            } else {
+                [valueString appendFormat:@";%@", value];
+            }
+        }
+        [result appendFormat:@"/%@%@", key, valueString];
+    }
+
+    
     [result appendFormat:@"/%@%@", kCookieMode, self.cookieMode];
     
     if (self.device) {

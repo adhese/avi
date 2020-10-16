@@ -46,7 +46,19 @@
 		C7421DCC23FEFF730010A7C6 /* AdView.h in Headers */ = {isa = PBXBuildFile; fileRef = C7421DCA23FEFF730010A7C6 /* AdView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C7421DCD23FEFF730010A7C6 /* AdView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7421DCB23FEFF730010A7C6 /* AdView.m */; };
 		C7421DCF23FEFFF00010A7C6 /* AdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7421DCE23FEFFF00010A7C6 /* AdView.xib */; };
+		DA1E43572539C7D100931F48 /* AdheseSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4999DB6823C5CD460048F138 /* AdheseSDK.framework */; };
+		DA1E43602539CB9C00931F48 /* URLGeneration.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1E435F2539CB9C00931F48 /* URLGeneration.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA1E43582539C7D100931F48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4999DB5F23C5CD450048F138 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4999DB6723C5CD460048F138;
+			remoteInfo = "Adhese SDK";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		49621A1123C8842500A3CBCE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -91,6 +103,9 @@
 		C7421DCA23FEFF730010A7C6 /* AdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdView.h; sourceTree = "<group>"; };
 		C7421DCB23FEFF730010A7C6 /* AdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdView.m; sourceTree = "<group>"; };
 		C7421DCE23FEFFF00010A7C6 /* AdView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdView.xib; sourceTree = "<group>"; };
+		DA1E43522539C7D100931F48 /* Adhese SDK Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Adhese SDK Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA1E43562539C7D100931F48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA1E435F2539CB9C00931F48 /* URLGeneration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLGeneration.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +113,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA1E434F2539C7D100931F48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA1E43572539C7D100931F48 /* AdheseSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				4999DB6A23C5CD460048F138 /* Adhese SDK */,
+				DA1E43532539C7D100931F48 /* Adhese SDK Tests */,
 				4999DB6923C5CD460048F138 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				4999DB6823C5CD460048F138 /* AdheseSDK.framework */,
+				DA1E43522539C7D100931F48 /* Adhese SDK Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,6 +249,15 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		DA1E43532539C7D100931F48 /* Adhese SDK Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DA1E435F2539CB9C00931F48 /* URLGeneration.m */,
+				DA1E43562539C7D100931F48 /* Info.plist */,
+			);
+			path = "Adhese SDK Tests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -275,6 +309,24 @@
 			productReference = 4999DB6823C5CD460048F138 /* AdheseSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		DA1E43512539C7D100931F48 /* Adhese SDK Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA1E435C2539C7D100931F48 /* Build configuration list for PBXNativeTarget "Adhese SDK Tests" */;
+			buildPhases = (
+				DA1E434E2539C7D100931F48 /* Sources */,
+				DA1E434F2539C7D100931F48 /* Frameworks */,
+				DA1E43502539C7D100931F48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA1E43592539C7D100931F48 /* PBXTargetDependency */,
+			);
+			name = "Adhese SDK Tests";
+			productName = "Adhese SDK Tests";
+			productReference = DA1E43522539C7D100931F48 /* Adhese SDK Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -287,6 +339,9 @@
 					4999DB6723C5CD460048F138 = {
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
+					};
+					DA1E43512539C7D100931F48 = {
+						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
@@ -304,6 +359,7 @@
 			projectRoot = "";
 			targets = (
 				4999DB6723C5CD460048F138 /* Adhese SDK */,
+				DA1E43512539C7D100931F48 /* Adhese SDK Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -318,6 +374,13 @@
 				49D9099723F6826E003D210B /* LICENSE in Resources */,
 				497B6C5323E03F7900376B4D /* adhese_size_reporter.js in Resources */,
 				49828DA423DAE36C003EA345 /* adhese_ad_wrapper.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA1E43502539C7D100931F48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +408,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DA1E434E2539C7D100931F48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA1E43602539CB9C00931F48 /* URLGeneration.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA1E43592539C7D100931F48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4999DB6723C5CD460048F138 /* Adhese SDK */;
+			targetProxy = DA1E43582539C7D100931F48 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4999DB6E23C5CD460048F138 /* Debug */ = {
@@ -517,6 +596,40 @@
 			};
 			name = Release;
 		};
+		DA1E435A2539C7D100931F48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Adhese SDK Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.adhese.Adhese-SDK-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA1E435B2539C7D100931F48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Adhese SDK Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.adhese.Adhese-SDK-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -534,6 +647,15 @@
 			buildConfigurations = (
 				4999DB7123C5CD460048F138 /* Debug */,
 				4999DB7223C5CD460048F138 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA1E435C2539C7D100931F48 /* Build configuration list for PBXNativeTarget "Adhese SDK Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA1E435A2539C7D100931F48 /* Debug */,
+				DA1E435B2539C7D100931F48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
