@@ -68,7 +68,8 @@
     NSArray<NSString *> *sortedKeys = [[self.customParameters allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     
     for (NSString *key in sortedKeys) {
-        NSMutableSet<NSString *>* values = self.customParameters[key];
+        NSArray<NSString *>* values = [[self.customParameters[key] allObjects] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+        
         NSMutableString *valueString = [NSMutableString alloc];
 
         BOOL first = YES;

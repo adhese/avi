@@ -86,13 +86,13 @@
     [options addCustomParameterRawWithKey:@"xa" andValues:[NSSet setWithObjects:@"abc",@"def",nil]];
     [options addCustomParameterRawWithKey:@"xb" andValue:@"pqr"];
     [options addCustomParametersRaw: @{
-        @"xa" : [NSSet setWithObject:@"ghi"],
+        @"xa" : [NSSet setWithObject:@"aaa"],
         @"xb" : [NSSet setWithObject:@"abc"],
         @"xc" : [NSSet setWithObject:@"ghi"]}];
 
     NSString* url = options.getAsURL;
     
-    XCTAssertEqualObjects(url, @"/sl_test_loc-test_slot/xaabc;def;ghi/xbpqr;abc/xcghi/tlall");
+    XCTAssertEqualObjects(url, @"/sl_test_loc-test_slot/xaaaa;abc;def/xbabc;pqr/xcghi/tlall");
 }
 
 - (void) testUrlCustomParameter5 {
