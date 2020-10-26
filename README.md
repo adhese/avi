@@ -171,6 +171,9 @@ Set `adView.shouldOpenAd = NO` to enable/disable automatic opening of the ad in 
 4. Tag your commit with the same version as specified in the podspec file
 5. Execute `pod trunk push` via the terminal at the root folder of the project and follow the instructions
 
+ℹ️  If you don't have an active session with cocoapods yet, execute this command and click the link in the email you receive from cocoapods
+`pod trunk register your_email@domain.ext`
+
 ℹ️  For the whole process from start to finish (including initial publishing) see this [excellent blogpost](https://medium.com/flawless-app-stories/create-your-own-cocoapods-library-da589d5cd270).
 
 ℹ️  For more information about managing maintainers see [this article](https://guides.cocoapods.org/making/making-a-cocoapod.html).
