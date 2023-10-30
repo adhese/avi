@@ -217,10 +217,25 @@
     }
 
     BOOL isClickEvent = navigationAction.navigationType == WKNavigationTypeLinkActivated;
-    if (self.shouldOpenAd && [navigationAction.request.URL.absoluteString hasPrefix:@"http"] && isClickEvent) {
-        [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
-        decisionHandler(WKNavigationActionPolicyAllow);
-        return;
+    if (isClickEvent){
+        // If the url should open on click and it navigates to a webpage
+        if (self.shouldOpenAd && [navigationAction.request.URL.absoluteString hasPrefix:@"http"]) {
+            if (@available(iOS 10.0, *)) {
+                [[UIApplication sharedApplication] openURL:navigationAction.request.URL options:@{} completionHandler:nil];
+            } else {
+                [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
+            }
+            decisionHandler(WKNavigationActionPolicyCancel); // Cancel navigation in the web view
+            return;
+        } 
+        // If the url should not automatically open on click and we are not navigating to a webpage
+        else if (!self.shouldOpenAd && ![navigationAction.request.URL.absoluteString hasPrefix:@"http"]) {
+            if ([self.delegate respondsToSelector:@selector(adClicked:withURL:)]) {
+                 [self.delegate adClicked:self withURL:navigationAction.request.URL]; // Run adClicked function with custom client specific logic
+            }
+            decisionHandler(WKNavigationActionPolicyCancel); // Cancel navigation in the web view
+            return;
+        }
     }
 
     decisionHandler(WKNavigationActionPolicyAllow);
