@@ -65,7 +65,6 @@ AdView *halfPageAdview;
     
     self.billboardAdview.shouldOpenAd = NO; // This line is neccessary to handle custom click logic, see adClicked
 
-  
     [Adhese loadAds:options withCompletionHandler:^(NSArray<Ad *> * _Nonnull ads, AdheseError * _Nullable error) {
         
         if (error) {
@@ -141,7 +140,7 @@ AdView *halfPageAdview;
     [events addObject:[NSString stringWithFormat:@"%@ did load.", view.ad.slotName]];
 }
 
-// Example for custom click handling
+// Example for custom click handling, see "Extra" in the README.md
 - (void)adClicked:(AdView *)adView withURL:(NSURL *)url {
     NSLog(@"Ad clicked, navigating to: %@", url.absoluteString);
 }

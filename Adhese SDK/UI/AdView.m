@@ -216,30 +216,31 @@
         return;
     }
 
-    BOOL isClickEvent = navigationAction.navigationType == WKNavigationTypeLinkActivated;
-    if (isClickEvent){
-        // If the url should open on click and it navigates to a webpage
-        if (self.shouldOpenAd && [navigationAction.request.URL.absoluteString hasPrefix:@"http"]) {
-            if (@available(iOS 10.0, *)) {
-                [[UIApplication sharedApplication] openURL:navigationAction.request.URL options:@{} completionHandler:nil];
-            } else {
-                [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
-            }
-            decisionHandler(WKNavigationActionPolicyCancel); // Cancel navigation in the web view
-            return;
-        } 
-        // If the url should not automatically open on click and we are not navigating to a webpage
-        else if (!self.shouldOpenAd && ![navigationAction.request.URL.absoluteString hasPrefix:@"http"]) {
+    if (navigationAction.navigationType == WKNavigationTypeLinkActivated) {
+        NSURL *url = navigationAction.request.URL;
+
+        if (!self.shouldOpenAd) {
             if ([self.delegate respondsToSelector:@selector(adClicked:withURL:)]) {
-                 [self.delegate adClicked:self withURL:navigationAction.request.URL]; // Run adClicked function with custom client specific logic
+                [self.delegate adClicked:self withURL:url];
+                decisionHandler(WKNavigationActionPolicyCancel);
+                return;
+            } else {
+                [AdheseLogger logEvent:SDK_ERROR withMessage:@"Cannot handle custom click. The delegate has not implemented adClicked:withURL:."];
             }
-            decisionHandler(WKNavigationActionPolicyCancel); // Cancel navigation in the web view
-            return;
         }
+
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+        } else {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
     }
 
     decisionHandler(WKNavigationActionPolicyAllow);
 }
+
 
 #pragma mark - View Visibility Tick
 -(void)viewVisibilityTick {
