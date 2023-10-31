@@ -62,7 +62,9 @@ AdView *halfPageAdview;
     AdheseOptions *options = [[AdheseOptions alloc] initWithLocation:@"_demo_ster_a_"];
     options.cookieMode = kAll;
     options.slots = @[@"billboard", @"halfpage"];
-  
+    
+    self.billboardAdview.shouldOpenAd = NO; // This line is neccessary to handle custom click logic, see adClicked
+
     [Adhese loadAds:options withCompletionHandler:^(NSArray<Ad *> * _Nonnull ads, AdheseError * _Nullable error) {
         
         if (error) {
@@ -136,6 +138,11 @@ AdView *halfPageAdview;
     }
     
     [events addObject:[NSString stringWithFormat:@"%@ did load.", view.ad.slotName]];
+}
+
+// Example for custom click handling, see "Extra" in the README.md
+- (void)adClicked:(AdView *)adView withURL:(NSURL *)url {
+    NSLog(@"Ad clicked, navigating to: %@", url.absoluteString);
 }
 
 -(void)viewImpressionWasNotified:(id)adView withError:(AdheseError * _Nullable)error {

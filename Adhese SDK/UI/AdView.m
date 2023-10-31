@@ -216,15 +216,31 @@
         return;
     }
 
-    BOOL isClickEvent = navigationAction.navigationType == WKNavigationTypeLinkActivated;
-    if (self.shouldOpenAd && [navigationAction.request.URL.absoluteString hasPrefix:@"http"] && isClickEvent) {
-        [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
-        decisionHandler(WKNavigationActionPolicyAllow);
+    if (navigationAction.navigationType == WKNavigationTypeLinkActivated) {
+        NSURL *url = navigationAction.request.URL;
+
+        if (!self.shouldOpenAd) {
+            if ([self.delegate respondsToSelector:@selector(adClicked:withURL:)]) {
+                [self.delegate adClicked:self withURL:url];
+                decisionHandler(WKNavigationActionPolicyCancel);
+                return;
+            } else {
+                [AdheseLogger logEvent:SDK_ERROR withMessage:@"Cannot handle custom click. The delegate has not implemented adClicked:withURL:."];
+            }
+        }
+
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+        } else {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+        decisionHandler(WKNavigationActionPolicyCancel);
         return;
     }
 
     decisionHandler(WKNavigationActionPolicyAllow);
 }
+
 
 #pragma mark - View Visibility Tick
 -(void)viewVisibilityTick {

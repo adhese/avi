@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 - (void)adClicked:(id)adView withError:(AdheseError * _Nullable)error;
+- (void)adClicked:(id)adView withURL:(NSURL *)url;
 
 @end
 
