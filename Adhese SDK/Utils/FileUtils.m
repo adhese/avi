@@ -13,17 +13,19 @@
 +(NSString *)loadSDKFileWithName:(NSString *)filename {
     NSString *localResDir = [NSString stringWithFormat:@"%@/Frameworks/AdheseSDK.framework", [[NSBundle mainBundle] resourcePath]];
     NSString *cocoaPodResDir = [NSString stringWithFormat:@"%@/Frameworks/Adhese.framework", [[NSBundle mainBundle] resourcePath]];
+    NSString *staticLinkResDir = [NSString stringWithFormat:@"%@", [[NSBundle mainBundle] resourcePath]];
     
     // Extra check because unfortunately the local SDK is called "AdheseSDK" whilst the Cocoapod is called "Adhese"
     BOOL localResDirExists = [self doesDirectoryExist:localResDir];
     BOOL cocoaPodResDirExists = [self doesDirectoryExist:cocoaPodResDir];
+    BOOL staticLinkResDirExists = [self doesDirectoryExist:staticLinkResDir];
     
-    if (!localResDirExists && !cocoaPodResDirExists) {
+    if (!localResDirExists && !cocoaPodResDirExists && !staticLinkResDirExists) {
         [NSException raise:@"Critical error" format:@"Adhese could not load essential framework files."];
         return nil;
     }
     
-    NSString *resDir = cocoaPodResDirExists ? cocoaPodResDir : localResDir;
+    NSString *resDir = localResDirExists ? localResDir : (cocoaPodResDirExists ? cocoaPodResDir : staticLinkResDir);
     
     return [self loadSDKFileWithName:filename forPath:resDir];
 }
